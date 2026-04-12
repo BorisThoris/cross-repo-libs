@@ -1,6 +1,7 @@
 import React, { act } from 'react';
-import { afterEach, beforeEach, describe, expect, test } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { createRoot } from 'react-dom/client';
+import { notifyError } from './notificationBridge.js';
 import { useNotificationStore } from './notificationStore.js';
 import { NotificationHost } from './NotificationHost.js';
 
@@ -48,6 +49,7 @@ describe('NotificationHost', () => {
     if (container) {
       container.remove();
     }
+    vi.restoreAllMocks();
   });
 
   test('uses semantic roles for info, error, and confirmation notifications', async () => {
@@ -57,7 +59,10 @@ describe('NotificationHost', () => {
       useNotificationStore.getState().showInfo('info-message', 0);
       useNotificationStore.getState().showError('error-message', 0);
     });
-    const confirmPromise = useNotificationStore.getState().confirm('confirm-message');
+    let confirmPromise!: Promise<boolean>;
+    await act(async () => {
+      confirmPromise = useNotificationStore.getState().confirm('confirm-message');
+    });
     await flush();
 
     const statusNotification = container.querySelector('[role="status"]');
@@ -72,18 +77,25 @@ describe('NotificationHost', () => {
       .getState()
       .notifications.find((notification) => notification.message === 'confirm-message');
     expect(confirmItem).toBeTruthy();
-    useNotificationStore.getState().resolveNotification(confirmItem!.id, true);
+    await act(async () => {
+      useNotificationStore.getState().resolveNotification(confirmItem!.id, true);
+    });
     await expect(confirmPromise).resolves.toBe(true);
   });
 
   test('dismiss button resolves confirmation as false', async () => {
     await renderWithProviders();
 
-    const confirmPromise = useNotificationStore.getState().confirm('dismiss-confirm');
+    let confirmPromise!: Promise<boolean>;
+    await act(async () => {
+      confirmPromise = useNotificationStore.getState().confirm('dismiss-confirm');
+    });
     await flush();
     const closeButton = findCloseButton();
     expect(closeButton).toBeTruthy();
-    closeButton!.click();
+    await act(async () => {
+      closeButton!.click();
+    });
 
     await expect(confirmPromise).resolves.toBe(false);
     await flush();
@@ -93,10 +105,91 @@ describe('NotificationHost', () => {
   test('escape key cancels confirmation notifications', async () => {
     await renderWithProviders();
 
-    const confirmPromise = useNotificationStore.getState().confirm('escape-confirm');
+    let confirmPromise!: Promise<boolean>;
+    await act(async () => {
+      confirmPromise = useNotificationStore.getState().confirm('escape-confirm');
+    });
     await flush();
-    window.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Escape' }));
+    await act(async () => {
+      window.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Escape' }));
+    });
 
     await expect(confirmPromise).resolves.toBe(false);
+  });
+
+  test('applies custom labels to region and controls', async () => {
+    await act(async () => {
+      root = createRoot(container);
+      root.render(
+        <NotificationHost labels={{ regionAriaLabel: 'Alerts', closeAriaLabel: 'Dismiss' }}>
+          <span>app</span>
+        </NotificationHost>
+      );
+    });
+
+    await act(async () => {
+      useNotificationStore.getState().showInfo('hello', 0);
+    });
+    await flush();
+
+    expect(container.querySelector('[role="region"]')?.getAttribute('aria-label')).toBe('Alerts');
+    expect(container.querySelector('button[aria-label="Dismiss"]')).toBeTruthy();
+  });
+
+  test('imperative notifyError shows toast when host is mounted', async () => {
+    await renderWithProviders();
+
+    await act(async () => {
+      notifyError('from-imperative', 0);
+    });
+    await flush();
+
+    expect(container.textContent).toContain('from-imperative');
+    expect(container.querySelector('[role="alert"]')).toBeTruthy();
+  });
+
+  test('unmount clears global handler so notifyError falls back to console', async () => {
+    await renderWithProviders();
+    await flush();
+
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+    await act(async () => {
+      root!.unmount();
+      root = null;
+    });
+
+    notifyError('after-unmount');
+    expect(spy).toHaveBeenCalledWith('[Notification]', 'after-unmount');
+  });
+
+  test('confirm and cancel buttons resolve the promise', async () => {
+    await renderWithProviders();
+
+    let confirmPromise!: Promise<boolean>;
+    await act(async () => {
+      confirmPromise = useNotificationStore.getState().confirm('choose');
+    });
+    await flush();
+
+    const confirmBtn = container.querySelector('button[aria-label="Confirm"]') as HTMLButtonElement;
+    expect(confirmBtn).toBeTruthy();
+
+    await act(async () => {
+      confirmBtn.click();
+    });
+    await expect(confirmPromise).resolves.toBe(true);
+
+    let second!: Promise<boolean>;
+    await act(async () => {
+      second = useNotificationStore.getState().confirm('choose-again');
+    });
+    await flush();
+    const cancelBtn2 = container.querySelector('button[aria-label="Cancel"]') as HTMLButtonElement;
+    expect(cancelBtn2).toBeTruthy();
+    await act(async () => {
+      cancelBtn2.click();
+    });
+    await expect(second).resolves.toBe(false);
   });
 });

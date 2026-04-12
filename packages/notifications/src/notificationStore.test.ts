@@ -1,5 +1,6 @@
-import { describe, expect, test, beforeEach } from 'vitest';
-import { useNotificationStore } from './notificationStore.js';
+import { describe, expect, test, beforeEach, vi, afterEach } from 'vitest';
+import * as rafDelayModule from './rafDelay.js';
+import { createNotificationStore, useNotificationStore } from './notificationStore.js';
 
 describe('notificationStore', () => {
   beforeEach(() => {
@@ -8,6 +9,10 @@ describe('notificationStore', () => {
       maxNotifications: 5,
       notificationSequence: 0
     });
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   test('keeps deterministic notification ids', () => {
@@ -92,5 +97,34 @@ describe('notificationStore', () => {
     expect(state.notifications).toHaveLength(2);
     expect(state.notifications[0]?.message).toBe('message-2');
     expect(state.notifications[1]?.message).toBe('message-3');
+  });
+
+  test('createNotificationStore returns an isolated store instance', () => {
+    const a = createNotificationStore();
+    const b = createNotificationStore();
+
+    a.getState().showInfo('only-a', 0);
+    b.getState().showInfo('only-b', 0);
+
+    expect(a.getState().notifications).toHaveLength(1);
+    expect(a.getState().notifications[0]?.message).toBe('only-a');
+    expect(b.getState().notifications).toHaveLength(1);
+    expect(b.getState().notifications[0]?.message).toBe('only-b');
+    expect(useNotificationStore.getState().notifications).toHaveLength(0);
+  });
+
+  test('auto-dismiss schedules remove via rafDelay', async () => {
+    vi.spyOn(rafDelayModule, 'rafDelay').mockImplementation((cb) => {
+      queueMicrotask(cb);
+      return () => {};
+    });
+
+    useNotificationStore.getState().showInfo('auto-dismiss', 3000);
+    expect(useNotificationStore.getState().notifications).toHaveLength(1);
+
+    await Promise.resolve();
+    await Promise.resolve();
+
+    expect(useNotificationStore.getState().notifications).toHaveLength(0);
   });
 });
