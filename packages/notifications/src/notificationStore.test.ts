@@ -127,4 +127,41 @@ describe('notificationStore', () => {
 
     expect(useNotificationStore.getState().notifications).toHaveLength(0);
   });
+
+  test('onDismiss runs when a simple toast is removed', () => {
+    const onDismiss = vi.fn();
+    const id = useNotificationStore.getState().addNotification('x', 'info', 0, null, onDismiss);
+    useNotificationStore.getState().removeNotification(id);
+    expect(onDismiss).toHaveBeenCalledTimes(1);
+  });
+
+  test('onDismiss runs once for clearNotifications', () => {
+    const onDismiss = vi.fn();
+    useNotificationStore.getState().addNotification('a', 'info', 0, null, onDismiss);
+    useNotificationStore.getState().clearNotifications();
+    expect(onDismiss).toHaveBeenCalledTimes(1);
+  });
+
+  test('onDismiss is not invoked for confirm dialogs', async () => {
+    const onDismiss = vi.fn();
+    const id = useNotificationStore.getState().addNotification(
+      'confirm?',
+      'info',
+      0,
+      { onCancel: () => {}, onConfirm: () => {} },
+      onDismiss
+    );
+    useNotificationStore.getState().resolveNotification(id, false);
+    expect(onDismiss).not.toHaveBeenCalled();
+  });
+
+  test('onDismiss runs when a toast is dropped by queue limit', () => {
+    const droppedDismiss = vi.fn();
+    useNotificationStore.getState().addNotification('victim', 'info', 0, null, droppedDismiss);
+    for (let i = 0; i < 5; i += 1) {
+      useNotificationStore.getState().showInfo(`push-${i}`, 0);
+    }
+    expect(useNotificationStore.getState().notifications).toHaveLength(5);
+    expect(droppedDismiss).toHaveBeenCalledTimes(1);
+  });
 });

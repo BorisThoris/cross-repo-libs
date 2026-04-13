@@ -1,5 +1,5 @@
-import { create } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
+import { create } from 'zustand/react';
 import { rafDelay } from './rafDelay.js';
 
 export type NotificationType = 'info' | 'success' | 'warning' | 'error';
@@ -15,6 +15,8 @@ export type NotificationRecord = {
   id: string;
   message: string;
   onConfirm: ConfirmHandlerBundle | null;
+  /** Called when this toast is removed (timeout, X, queue trim, clear). Ignored when `onConfirm` is set (confirm dialogs use confirm/cancel handlers only). */
+  onDismiss?: (() => void) | null;
   type: NotificationType;
 };
 
@@ -78,6 +80,14 @@ const settleConfirmation = (notification: NotificationRecord | null | undefined,
   confirmHandlers.onCancel(false);
 };
 
+/** Non-confirm toasts only; never combined with confirm dialog resolution per product contract. */
+const invokeNonConfirmDismiss = (notification: NotificationRecord | null | undefined) => {
+  if (!notification?.onDismiss || notification.onConfirm) {
+    return;
+  }
+  notification.onDismiss();
+};
+
 const enforceNotificationLimit = (
   notifications: NotificationRecord[],
   limit: number
@@ -121,7 +131,8 @@ export type NotificationStoreState = {
     message: string,
     type?: NotificationType,
     duration?: number,
-    onConfirm?: ConfirmInput | null
+    onConfirm?: ConfirmInput | null,
+    onDismiss?: (() => void) | null
   ) => string;
   resolveNotification: (id: string, result?: boolean) => void;
   removeNotification: (id: string) => void;
@@ -147,7 +158,7 @@ export const createNotificationStore = () =>
         return `notification_${nextValue}`;
       },
 
-      addNotification: (message, type = 'info', duration = 3000, onConfirm = null) => {
+      addNotification: (message, type = 'info', duration = 3000, onConfirm = null, onDismiss = null) => {
         const id = get().getNextNotificationId();
         const normalizedConfirmHandlers = resolveConfirmHandlers(onConfirm);
         const newNotification: NotificationRecord = {
@@ -155,6 +166,7 @@ export const createNotificationStore = () =>
           id,
           message,
           onConfirm: normalizedConfirmHandlers,
+          onDismiss: onDismiss ?? undefined,
           type
         };
 
@@ -169,7 +181,10 @@ export const createNotificationStore = () =>
             return limitedNotifications;
           })()
         }));
-        removedByLimit.forEach((notification) => settleConfirmation(notification, false));
+        removedByLimit.forEach((notification) => {
+          settleConfirmation(notification, false);
+          invokeNonConfirmDismiss(notification);
+        });
 
         if (duration > 0 && !normalizedConfirmHandlers) {
           rafDelay(() => {
@@ -189,6 +204,7 @@ export const createNotificationStore = () =>
           };
         });
         settleConfirmation(removedNotification, result);
+        invokeNonConfirmDismiss(removedNotification);
       },
 
       removeNotification: (id) => {
@@ -197,7 +213,10 @@ export const createNotificationStore = () =>
 
       clearNotifications: () => {
         const notifications = get().notifications;
-        notifications.forEach((notification) => settleConfirmation(notification, false));
+        notifications.forEach((notification) => {
+          settleConfirmation(notification, false);
+          invokeNonConfirmDismiss(notification);
+        });
         set({ notifications: [] });
       },
 
@@ -215,23 +234,26 @@ export const createNotificationStore = () =>
             return limitedNotifications;
           })()
         }));
-        removedByLimit.forEach((notification) => settleConfirmation(notification, false));
+        removedByLimit.forEach((notification) => {
+          settleConfirmation(notification, false);
+          invokeNonConfirmDismiss(notification);
+        });
       },
 
       showSuccess: (message, duration = 3000) => {
-        return get().addNotification(message, 'success', duration);
+        return get().addNotification(message, 'success', duration, null, null);
       },
 
       showError: (message, duration = 5000) => {
-        return get().addNotification(message, 'error', duration);
+        return get().addNotification(message, 'error', duration, null, null);
       },
 
       showWarning: (message, duration = 4000) => {
-        return get().addNotification(message, 'warning', duration);
+        return get().addNotification(message, 'warning', duration, null, null);
       },
 
       showInfo: (message, duration = 3000) => {
-        return get().addNotification(message, 'info', duration);
+        return get().addNotification(message, 'info', duration, null, null);
       },
 
       confirm: (message) => {
