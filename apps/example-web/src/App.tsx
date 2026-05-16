@@ -19,7 +19,7 @@ const packages = [
     name: 'ai-image',
     label: 'Image generation CLI',
     detail: 'OpenAI Images and local SDXL wrappers with dry-run friendly command planning.',
-    status: 'Static sample command'
+    status: 'SDXL dry-run sample'
   },
   {
     name: 'ai-music',
@@ -48,16 +48,16 @@ const packages = [
 ];
 
 const sampleLog = [
-  '$ node packages/ai-image/scripts/image_gen.mjs --prompt "portfolio asset" --dry-run',
-  'DRY RUN image: would write apps/example-web/public/workbench-card.png',
-  '$ node packages/ai-music/scripts/run-ace-batch.mjs --jobs scripts/jobs.example.json --dry-run',
+  '$ node packages/ai-image/scripts/image_gen.mjs sdxl-card-backs --dry-run',
+  'DRY RUN image: local SDXL card-back plan validated without OPENAI_API_KEY',
+  '$ node packages/ai-music/scripts/run-ace-batch.mjs --jobs packages/ai-music/scripts/jobs.example.json --dry-run',
   'QUEUED music: 3 ACE-Step jobs, local model required only outside dry-run',
-  '$ node packages/ai-3d/scripts/cross-ai-3d.mjs --mode procedural-room --format glb --dry-run',
+  '$ node packages/ai-3d/scripts/cross-ai-3d.mjs room --prompt "small office room" --dry-run',
   'EXPORT 3d: room-layout.glb planned with no network access'
 ];
 
 function triggerImageDryRun() {
-  notifyInfo('Image dry run planned: prompt, seed, and output path validated.');
+  notifyInfo('SDXL card-back dry run planned: local paths validated without credentials.');
 }
 
 function triggerMusicQueue() {
