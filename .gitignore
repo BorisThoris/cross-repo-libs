@@ -7,3 +7,8 @@ coverage/
 .env.local
 *.tsbuildinfo
 .turbo
+local-models/
+local-output/
+.venv*/
+**/.venv*/
+**/tmp/

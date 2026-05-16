@@ -1,0 +1,20 @@
+export {
+  buildHunyuanCommand,
+  buildManifest,
+  buildRoomCommand,
+  defaultBlenderCandidates,
+  defaultOutPath,
+  discoverBlenderPath,
+  manifestPathFor,
+  outputDirectory,
+  parseAi3dArgs,
+  referenceImagePath,
+  selectBackend,
+  validateOptions,
+  type Ai3dBackend,
+  type Ai3dCommand,
+  type Ai3dManifest,
+  type Ai3dOptions,
+  type BlenderDiscoveryContext,
+  type BuiltCommand
+} from './ai3dCli.js';

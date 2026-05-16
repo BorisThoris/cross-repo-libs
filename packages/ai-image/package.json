@@ -1,0 +1,28 @@
+{
+  "name": "@cross-repo-libs/ai-image",
+  "version": "0.1.0",
+  "description": "Reusable image generation CLIs for OpenAI Images and local SDXL batches.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "cross-ai-image": "./scripts/image_gen.mjs"
+  },
+  "files": [
+    "dist",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@cross-repo-libs/ai-common": "*"
+  }
+}

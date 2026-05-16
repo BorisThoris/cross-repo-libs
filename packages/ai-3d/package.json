@@ -1,0 +1,29 @@
+{
+  "name": "@cross-repo-libs/ai-3d",
+  "version": "0.1.0",
+  "description": "Reusable game-ready 3D asset generation CLI with procedural room and AI prop backends.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "cross-ai-3d": "./scripts/cross-ai-3d.mjs"
+  },
+  "files": [
+    "dist",
+    "scripts",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@cross-repo-libs/ai-common": "*"
+  }
+}
