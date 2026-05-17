@@ -6,7 +6,9 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@cross-repo-libs/notifications": ["../../packages/notifications/src/index.ts"]
+      "@cross-repo-libs/notifications": ["../../packages/notifications/src/index.ts"],
+      "@cross-repo-libs/react-ui": ["../../packages/react-ui/src/index.ts"],
+      "@cross-repo-libs/three-primitives": ["../../packages/three-primitives/src/index.ts"]
     }
   },
   "include": ["src"]

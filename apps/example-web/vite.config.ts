@@ -9,7 +9,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@cross-repo-libs/notifications': path.resolve(__dirname, '../../packages/notifications/src/index.ts')
+      '@cross-repo-libs/notifications': path.resolve(__dirname, '../../packages/notifications/src/index.ts'),
+      '@cross-repo-libs/react-ui': path.resolve(__dirname, '../../packages/react-ui/src/index.ts'),
+      '@cross-repo-libs/three-primitives': path.resolve(
+        __dirname,
+        '../../packages/three-primitives/src/index.ts'
+      )
     }
   },
   server: {

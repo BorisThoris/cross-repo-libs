@@ -1,0 +1,36 @@
+{
+  "name": "@cross-repo-libs/react-ui",
+  "version": "0.1.0",
+  "description": "Curated reusable React UI components extracted and refined from local portfolio repos.",
+  "type": "module",
+  "sideEffects": [
+    "./dist/react-ui.css"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/react-ui.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node ./scripts/copy-css.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "ogl": "^1.0.11"
+  },
+  "devDependencies": {
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  }
+}

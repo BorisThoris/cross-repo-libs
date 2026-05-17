@@ -10,10 +10,12 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
+    "components:scan": "node scripts/scan-components.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "example:dev": "npm run dev --workspace=example-web"
+    "example:dev": "npm run dev --workspace=example-web",
+    "storybook:dev": "npm run example:dev"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",

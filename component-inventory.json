@@ -1,0 +1,368 @@
+[
+  {
+    "name": "Button / IconButton",
+    "sourceRepo": "BBeats, memory-dungeon",
+    "sourcePaths": [
+      "BBeats/src/components/ui/AppButton.jsx",
+      "BBeats/src/components/ui/IconButton.jsx",
+      "memory-dungeon/src/renderer/ui/UiButton.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Consistent reusable interaction pattern, low app coupling after removing styled-components/theme dependencies, strong showcase value."
+  },
+  {
+    "name": "Panel",
+    "sourceRepo": "memory-dungeon",
+    "sourcePaths": [
+      "memory-dungeon/src/renderer/ui/Panel.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Clean typed surface and useful layout primitive with minimal coupling."
+  },
+  {
+    "name": "DisplayTitle / Callout",
+    "sourceRepo": "memory-dungeon",
+    "sourcePaths": [
+      "memory-dungeon/src/renderer/ui/ScreenTitle.tsx",
+      "memory-dungeon/src/renderer/ui/AccentBanner.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "High-level screen title and contextual message patterns adapted into package-level typography and callout components."
+  },
+  {
+    "name": "StatTile",
+    "sourceRepo": "memory-dungeon",
+    "sourcePaths": [
+      "memory-dungeon/src/renderer/ui/StatTile.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Portable metrics component that works well in portfolio, dashboard, and game HUD contexts."
+  },
+  {
+    "name": "OverlayActionDock",
+    "sourceRepo": "memory-dungeon",
+    "sourcePaths": [
+      "memory-dungeon/src/renderer/ui/OverlayActionDock.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Strong reusable action grouping pattern, refined to depend only on the shared Button."
+  },
+  {
+    "name": "EmptyState",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/ui/EmptyState.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Reusable content-state pattern after replacing app theme tokens with package CSS variables."
+  },
+  {
+    "name": "LibraryCard",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/ui/LibraryCard.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Good reusable selection/list card pattern, refined away from styled-components and dense app-only behavior."
+  },
+  {
+    "name": "LibraryToolbar / SearchInput / FilterChip / SegmentedControl",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/Editor/components/PaintingTopBar/components/InstrumentDrawer/components/SearchControls.jsx",
+      "BBeats/src/components/Editor/components/PaintingTopBar/components/InstrumentDrawer/components/SearchTagChipRow.jsx",
+      "BBeats/src/components/ui/LibraryEntryCard.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Reusable library browsing controls adapted into plain React primitives for public component and preset catalogs."
+  },
+  {
+    "name": "TextureKit",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/TexturePainter.tsx",
+      "ThreeJsGem-Fixed/src/components/PresetTextureLibrary.tsx",
+      "ThreeJsGem-Fixed/src/components/ColorPaletteDemo.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Texture creator concepts rebuilt as palette, preview tile, and preset card primitives with no app theme or canvas dependency."
+  },
+  {
+    "name": "MusicWorkspace controls",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/Editor/components/PaintingTopBar",
+      "BBeats/src/components/Editor/components/PaintingTopBar/components/InstrumentDrawer",
+      "BBeats/src/components/ui/LibraryEntryCard.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Beat-editor control patterns converted into transport, level meter, step grid, and mini timeline primitives."
+  },
+  {
+    "name": "AeroLiquidBackground",
+    "sourceRepo": "portfolio",
+    "sourcePaths": [
+      "portfolio/src/AeroLiquidBackground.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Distinctive WebGL background component adapted for public showcase use with a CSS fallback."
+  },
+  {
+    "name": "ModalDialog",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/Editor/components/Modal/Modal.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Reusable focus-managed modal behavior rebuilt without styled-components or app theme coupling."
+  },
+  {
+    "name": "InstrumentPicker",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/Editor/components/InstrumentLayerPanel/InstrumentLayerPanel.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Instrument layer selection panel generalized into a reusable picker for layers, devices, and presets."
+  },
+  {
+    "name": "GameHud",
+    "sourceRepo": "gem-dungeon, skyfall",
+    "sourcePaths": [
+      "gem-dungeon/src/components/GameUI.tsx",
+      "skyfall/app/config/styleTokens/components/hud.js",
+      "skyfall/app/config/styleTokens/components/game.js"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Game HUD patterns converted into generic overlay, resource, inventory, and control-hint primitives."
+  },
+  {
+    "name": "PreviewCard",
+    "sourceRepo": "roam-rental-dashboard, react-fitness-ecommerce-demo",
+    "sourcePaths": [
+      "roam-rental-dashboard/roam-rental-dashboard-app/src/app/components/rvPreview/index.tsx",
+      "react-fitness-ecommerce-demo/src/components/productCard.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Older listing/card patterns rebuilt as a clean generic preview card for products, rentals, projects, and media."
+  },
+  {
+    "name": "FlipTile",
+    "sourceRepo": "react-redux-memory-card-game",
+    "sourcePaths": [
+      "react-redux-memory-card-game/src/components/mysteryCard/Card.js",
+      "react-redux-memory-card-game/src/components/replayButton/index.js"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Memory-card flip behavior converted into a controlled CSS-transform button component without Redux or image assets."
+  },
+  {
+    "name": "Torch",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Torch.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Self-contained R3F primitive with strong visual demo value and no physics/runtime asset coupling."
+  },
+  {
+    "name": "Brazier",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Brazier.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Scene prop adapted into a dependency-light R3F primitive with no Rapier requirement."
+  },
+  {
+    "name": "FirstPersonHand / HeldItemAnchor",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/PlayerHand.tsx",
+      "ThreeJsGem-Fixed/src/components/HandDemo.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Original first-person hand idea rebuilt as a simple geometry primitive without Rapier, app input, or scene traversal coupling."
+  },
+  {
+    "name": "SceneControls",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/Door.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/objects/Lever.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/objects/PressurePlate.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Door, lever, and plate interactions converted into self-contained R3F geometry props."
+  },
+  {
+    "name": "DungeonProps",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Candle.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Chest.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/DungeonAltar.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/objects/Statue.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Chain.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Web.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Dungeon scene prop ideas rebuilt as dependency-light R3F primitives without Rapier, drei Text, or texture loaders."
+  },
+  {
+    "name": "TrapAndEffects",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Spikes.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/objects/ParticleSystem.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Hazard and particle patterns adapted into simple primitive geometry and generated buffer particles."
+  },
+  {
+    "name": "EnvironmentProps",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Table.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Barrel.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Pillar.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/WoodenFence.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/WoodenBridge.tsx",
+      "ThreeJsGem-Fixed/src/components/primitives/elements/MetalGate.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Reusable environment prop concepts rebuilt as lightweight geometry-only R3F primitives."
+  },
+  {
+    "name": "ItemOrb",
+    "sourceRepo": "ThreeJsGem-Fixed, gem-dungeon",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/primitives/objects/ItemSprite.tsx",
+      "gem-dungeon/src/components/ItemSprite.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Floating item/rarity presentation rebuilt without drei Text or app item types."
+  },
+  {
+    "name": "IconGlyph",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/ui/icons"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Reusable app/editor icon language rebuilt as typed SVG glyphs with no external icon package dependency."
+  },
+  {
+    "name": "TagEditor / SelectionCheckbox",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/ui/TagEditorAction.jsx",
+      "BBeats/src/components/ui/LibrarySelectionCheckbox.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Library metadata and batch-selection patterns rebuilt without styled-components, anchored popovers, or app theme coupling."
+  },
+  {
+    "name": "InstrumentControls",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/Piano/Piano.jsx",
+      "BBeats/src/components/Drums/Drum.jsx",
+      "BBeats/src/components/Tambourine/Tambourine.jsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Musical input ideas converted into dependency-light visual controls that leave audio wiring to the host app."
+  },
+  {
+    "name": "SpellcasterHud",
+    "sourceRepo": "gem-dungeon",
+    "sourcePaths": [
+      "gem-dungeon/CodingExamples/spellcaster-fps-main/src/components/EnergyUI.tsx",
+      "gem-dungeon/CodingExamples/spellcaster-fps-main/src/components/GameTimer.tsx",
+      "gem-dungeon/CodingExamples/spellcaster-fps-main/src/components/ScanLineEffect.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Distinctive game HUD language extracted into regular DOM primitives for use over canvas or app screens."
+  },
+  {
+    "name": "ProjectileEffects",
+    "sourceRepo": "gem-dungeon",
+    "sourcePaths": [
+      "gem-dungeon/CodingExamples/spellcaster-fps-main/src/components/Projectile/ProjectileRenderer.tsx",
+      "gem-dungeon/CodingExamples/spellcaster-fps-main/src/components/Projectile/ExplosionRenderer.tsx"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/three-primitives",
+    "reason": "Projectile effect language rebuilt as lightweight R3F geometry without Rapier, custom shader, or gameplay store coupling."
+  },
+  {
+    "name": "Chest / breakable object primitives",
+    "sourceRepo": "ThreeJsGem-Fixed",
+    "sourcePaths": [
+      "ThreeJsGem-Fixed/src/components/primitives/elements/Chest.tsx"
+    ],
+    "status": "deferred",
+    "package": "",
+    "reason": "Original implementation depends on Rapier, drei Text, texture loaders, and local breakable wrappers; needs a separate lightweight rewrite before inclusion."
+  },
+  {
+    "name": "CatCard / picture slider",
+    "sourceRepo": "angular-cat-adoption-app",
+    "sourcePaths": [
+      "angular-cat-adoption-app/src/app/cat-card",
+      "angular-cat-adoption-app/src/app/picture-slider"
+    ],
+    "status": "rejected",
+    "package": "",
+    "reason": "Useful archive material, but implementation is tightly coupled to Angular routing/local state and dated Bootstrap/jQuery carousel patterns."
+  },
+  {
+    "name": "RvPreview / SearchBar",
+    "sourceRepo": "roam-rental-dashboard",
+    "sourcePaths": [
+      "roam-rental-dashboard/roam-rental-dashboard-app/src/app/components/rvPreview",
+      "roam-rental-dashboard/roam-rental-dashboard-app/src/app/components/searchBar"
+    ],
+    "status": "deferred",
+    "package": "",
+    "reason": "Small and reusable after cleanup, but less visually distinctive than the accepted first-pass components."
+  },
+  {
+    "name": "ProductCard",
+    "sourceRepo": "react-fitness-ecommerce-demo",
+    "sourcePaths": [
+      "react-fitness-ecommerce-demo/src/components/productCard.jsx"
+    ],
+    "status": "rejected",
+    "package": "",
+    "reason": "Archive component with route/service coupling and old class component shape; not strong enough for strict showcase inclusion."
+  }
+]
