@@ -28,6 +28,14 @@ export {
   type DisplayTitleTag
 } from './ui/DisplayTitle.js';
 export {
+  DeviceRackPanel,
+  type DeviceRackHealth,
+  type DeviceRackPanelProps,
+  type DeviceRackParameter,
+  type DeviceRackPlugin,
+  type DeviceRackStage
+} from './ui/DeviceRackPanel.js';
+export {
   EmptyState,
   type EmptyStateProps
 } from './ui/EmptyState.js';
@@ -94,6 +102,25 @@ export {
   type StepGridProps,
   type TransportControlsProps
 } from './ui/MusicWorkspace.js';
+export {
+  DungeonCardFace,
+  MemoryHudStrip,
+  RelicChoiceGrid,
+  type DungeonCardFaceProps,
+  type DungeonCardTone,
+  type MemoryHudMetric,
+  type MemoryHudStripProps,
+  type RelicChoice,
+  type RelicChoiceGridProps,
+  type RelicRarity
+} from './ui/MemoryDungeonKit.js';
+export {
+  DungeonMapPanel,
+  type DungeonMapConnection,
+  type DungeonMapPanelProps,
+  type DungeonMapRoom,
+  type DungeonRoomType
+} from './ui/DungeonMapPanel.js';
 export {
   OverlayActionDock,
   type OverlayAction,

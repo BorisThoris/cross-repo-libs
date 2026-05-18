@@ -4,8 +4,10 @@ import {
   Button,
   Callout,
   ControlHints,
+  DeviceRackPanel,
   DisplayTitle,
   DrumPadGrid,
+  DungeonMapPanel,
   EmptyState,
   EnergyCore,
   FlipTile,
@@ -16,6 +18,8 @@ import {
   LevelMeter,
   LibraryCard,
   LibraryToolbar,
+  DungeonCardFace,
+  MemoryHudStrip,
   MiniTimeline,
   ModalDialog,
   OverlayActionDock,
@@ -23,6 +27,7 @@ import {
   Panel,
   PianoKeyboard,
   PreviewCard,
+  RelicChoiceGrid,
   ResourceMeter,
   ScanlineOverlay,
   SelectionCheckbox,
@@ -84,9 +89,12 @@ const showcaseStoryOrder = [
   'environment-props',
   'scene-controls',
   'game-hud',
+  'memory-dungeon-kit',
+  'dungeon-map-panel',
   'spellcaster-hud',
   'instrument-controls',
   'music-workspace',
+  'device-rack-panel',
   'texture-kit',
   'modal-dialog',
   'library-toolbar',
@@ -427,6 +435,158 @@ function GameHudStory({ variant }: { variant: StoryVariant }) {
           </div>
         }
         topRight={<StatTile density="dense" label="Score" value={variant.id === 'danger' ? '4,120' : '8,640'} valueAccent />}
+      />
+    </div>
+  );
+}
+
+function MemoryDungeonKitStory({ variant }: { variant: StoryVariant }) {
+  const hidden = variant.id === 'hidden-card';
+
+  if (variant.id === 'relics') {
+    return (
+      <RelicChoiceGrid
+        choices={[
+          { id: 'mirror-lens', title: 'Mirror Lens', archetype: 'Recall', description: 'Preview one hidden pair before committing.', impact: '+Controlled reveal', rarity: 'rare' },
+          { id: 'ember-cache', title: 'Ember Cache', archetype: 'Scoring', description: 'Bank bonus shards after long match chains.', impact: '+Chain value', rarity: 'uncommon' },
+          { id: 'anchor-rune', title: 'Anchor Rune', archetype: 'Defense', description: 'Keep one matched pair stable through shuffle pressure.', impact: '+Board control', rarity: 'common' }
+        ]}
+        onPick={noop}
+      />
+    );
+  }
+
+  if (variant.id === 'hud') {
+    return <MemoryHudStrip floor={12} lives={4} mode="Dungeon Showcase" score="32,780" />;
+  }
+
+  return (
+    <div className="story-memory-dungeon-kit">
+      <MemoryHudStrip floor={7} lives={3} score="18,420" />
+      <div className="story-memory-card-row">
+        <DungeonCardFace label="07" sigil="diamond" subtitle="Rune mirror" tone="gold" />
+        <DungeonCardFace label="12" revealed={!hidden} sigil="hex" subtitle="Ember cache" tone="ember" />
+        <DungeonCardFace label="21" sigil="triangle" subtitle="Frost ward" tone="frost" />
+      </div>
+    </div>
+  );
+}
+
+function DungeonMapPanelStory({ variant }: { variant: StoryVariant }) {
+  const compact = variant.id === 'compact';
+  const bossRoute = variant.id === 'boss-route';
+  const rooms = bossRoute
+    ? [
+        { id: 'start', label: 'S', type: 'start' as const, visited: true, x: 0, y: 2 },
+        { id: 'enemy-a', label: 'E', type: 'enemy' as const, visited: true, x: 1, y: 2 },
+        { id: 'puzzle', label: 'P', type: 'puzzle' as const, visited: true, x: 2, y: 2 },
+        { id: 'boss', label: 'B', type: 'boss' as const, x: 3, y: 2 },
+        { id: 'secret', label: '?', locked: true, type: 'secret' as const, x: 2, y: 1 },
+        { id: 'treasure', label: 'T', type: 'treasure' as const, x: 1, y: 3 }
+      ]
+    : [
+        { id: 'start', label: 'S', type: 'start' as const, visited: true, x: 0, y: 1 },
+        { id: 'enemy-a', label: 'E', type: 'enemy' as const, visited: true, x: 1, y: 1 },
+        { id: 'shop', label: '$', type: 'shop' as const, x: 1, y: 0 },
+        { id: 'library', label: 'L', type: 'library' as const, x: 2, y: 0 },
+        { id: 'puzzle', label: 'P', type: 'puzzle' as const, visited: true, x: 2, y: 1 },
+        { id: 'treasure', label: 'T', type: 'treasure' as const, x: 3, y: 1 },
+        { id: 'boss', label: 'B', locked: true, type: 'boss' as const, x: 4, y: 1 },
+        { id: 'trap', label: '!', type: 'trap' as const, x: 2, y: 2 }
+      ];
+
+  const connections = bossRoute
+    ? [
+        { from: 'start', to: 'enemy-a' },
+        { from: 'enemy-a', to: 'puzzle' },
+        { from: 'puzzle', to: 'boss' },
+        { from: 'puzzle', to: 'secret' },
+        { from: 'enemy-a', to: 'treasure' }
+      ]
+    : [
+        { from: 'start', to: 'enemy-a' },
+        { from: 'enemy-a', to: 'shop' },
+        { from: 'shop', to: 'library' },
+        { from: 'enemy-a', to: 'puzzle' },
+        { from: 'puzzle', to: 'treasure' },
+        { from: 'treasure', to: 'boss' },
+        { from: 'puzzle', to: 'trap' }
+      ];
+
+  return (
+    <div className="story-dungeon-map-stage">
+      <DungeonMapPanel
+        algorithm={bossRoute ? 'Boss path branch' : 'Plus Pattern'}
+        compact={compact}
+        connections={connections}
+        currentRoomId={bossRoute ? 'puzzle' : 'puzzle'}
+        mapLabel={compact ? 'Compact Dungeon' : 'Ghost Dungeon'}
+        rooms={compact ? rooms.slice(0, 5) : rooms}
+        subtitle={bossRoute ? 'Route planning' : 'Generated run map'}
+      />
+    </div>
+  );
+}
+
+function DeviceRackPanelStory({ variant }: { variant: StoryVariant }) {
+  const mastering = variant.id === 'mastering';
+  const bypassed = variant.id === 'bypass';
+
+  return (
+    <div className="story-device-rack-stage">
+      <DeviceRackPanel
+        plugins={[
+          {
+            id: 'instrument',
+            name: mastering ? 'Stereo Imager' : 'Granular Sampler',
+            health: 'info',
+            latency: mastering ? '0.4 ms' : '0.1 ms',
+            parameters: [
+              { label: mastering ? 'Width' : 'Grain', value: mastering ? '118%' : '42 ms', automated: true },
+              { label: mastering ? 'Mono cut' : 'Pitch', value: mastering ? '120 Hz' : '+7 st' },
+              { label: mastering ? 'Balance' : 'Spread', value: mastering ? '0.5 L' : '63%' }
+            ],
+            slotLabel: 'Slot 1',
+            vendor: 'BBeats'
+          },
+          {
+            id: 'filter',
+            name: mastering ? 'Tape Limiter' : 'State Variable Filter',
+            health: mastering ? 'warning' : 'ok',
+            latency: mastering ? '1.2 ms' : '0.2 ms',
+            parameters: [
+              { label: mastering ? 'Ceiling' : 'Cutoff', value: mastering ? '-0.8 dB' : '2.4 kHz', automated: true },
+              { label: mastering ? 'Drive' : 'Resonance', value: mastering ? '18%' : '38%' },
+              { label: mastering ? 'Release' : 'Mix', value: mastering ? 'Auto' : '82%' }
+            ],
+            slotLabel: 'Slot 2',
+            vendor: mastering ? 'Master Bus' : 'BBeats'
+          },
+          {
+            id: 'chorus',
+            name: mastering ? 'Reference Meter' : 'Dimension Chorus',
+            bypassed,
+            health: bypassed ? 'warning' : 'ok',
+            latency: '0.5 ms',
+            parameters: [
+              { label: 'Depth', value: bypassed ? '0%' : '24%' },
+              { label: 'Rate', value: '0.8 Hz' },
+              { label: 'Wet', value: bypassed ? '0%' : '31%' }
+            ],
+            slotLabel: 'Slot 3',
+            vendor: 'Rack FX'
+          }
+        ]}
+        selectedPluginId={mastering ? 'filter' : 'instrument'}
+        stages={[
+          { id: 'input', label: 'Input', value: mastering ? 'Mix Bus' : 'Kick Layer' },
+          { id: 'instrument', label: 'Device', value: mastering ? 'Master' : 'Sampler' },
+          { id: 'effects', label: 'Effects', value: bypassed ? '2 active' : '3 active', warning: bypassed },
+          { id: 'output', label: 'Output', value: mastering ? 'Limiter' : 'Drum Bus' }
+        ]}
+        subtitle={mastering ? 'Master chain' : 'Track effects'}
+        telemetry={mastering ? ['CPU 21%', '2.1 ms latency', 'True peak ready'] : ['CPU 14%', '0.8 ms latency', 'Automation ready']}
+        title={mastering ? 'Master Device Rack' : 'Device Rack'}
       />
     </div>
   );
@@ -1016,6 +1176,41 @@ const storyRegistryItems: StoryRecord[] = [
     render: (variant) => <GameHudStory variant={variant} />
   },
   {
+    id: 'memory-dungeon-kit',
+    title: 'MemoryDungeonKit',
+    group: 'Interactive Systems',
+    packageName: '@cross-repo-libs/react-ui',
+    importSnippet: "import { DungeonCardFace, MemoryHudStrip, RelicChoiceGrid } from '@cross-repo-libs/react-ui';",
+    overview: 'A polished memory-game UI kit with procedural card faces, relic draft cards, and a compact dungeon HUD strip.',
+    usage: 'Use the pieces together for game-like showcase surfaces or separately for reward choices, card states, and run summaries.',
+    packageNotes: 'Adapted into plain React and CSS components with no game store, asset pipeline, Pixi, or WebGL dependency.',
+    previewSize: 'wide',
+    variants: [
+      { id: 'cards', label: 'Cards and HUD', description: 'Dungeon card faces paired with a run HUD.' },
+      { id: 'hidden-card', label: 'Hidden card', description: 'One card in hidden pair state.' },
+      { id: 'relics', label: 'Relic draft', description: 'Three selectable relic choices.' },
+      { id: 'hud', label: 'HUD strip', description: 'Standalone compact run HUD.' }
+    ],
+    render: (variant) => <MemoryDungeonKitStory variant={variant} />
+  },
+  {
+    id: 'dungeon-map-panel',
+    title: 'DungeonMapPanel',
+    group: 'Interactive Systems',
+    packageName: '@cross-repo-libs/react-ui',
+    importSnippet: "import { DungeonMapPanel } from '@cross-repo-libs/react-ui';",
+    overview: 'A generated dungeon map panel for routes, room states, current-room context, and compact run overlays.',
+    usage: 'Pass room coordinates and optional connections; current, visited, locked, and room-type states are controlled by the host app.',
+    packageNotes: 'Adapted from gem-dungeon map UI into a store-free React component with CSS-only room rendering.',
+    previewSize: 'wide',
+    variants: [
+      { id: 'default', label: 'Generated map', description: 'Branching route with room states.' },
+      { id: 'boss-route', label: 'Boss route', description: 'Short route with secret and treasure branches.' },
+      { id: 'compact', label: 'Compact', description: 'Smaller overlay-friendly map panel.' }
+    ],
+    render: (variant) => <DungeonMapPanelStory variant={variant} />
+  },
+  {
     id: 'preview-card',
     title: 'PreviewCard',
     group: 'Application Components',
@@ -1032,6 +1227,23 @@ const storyRegistryItems: StoryRecord[] = [
       { id: 'selected', label: 'Selected copy', description: 'Metadata representing selected status.' }
     ],
     render: (variant) => <PreviewCardStory variant={variant} />
+  },
+  {
+    id: 'device-rack-panel',
+    title: 'DeviceRackPanel',
+    group: 'Application Components',
+    packageName: '@cross-repo-libs/react-ui',
+    importSnippet: "import { DeviceRackPanel } from '@cross-repo-libs/react-ui';",
+    overview: 'A polished plugin/device rack surface for audio tools, creative editors, and signal-chain dashboards.',
+    usage: 'Provide plugins, signal-flow stages, telemetry, and selected/bypassed states from the host app. Parameter values can be plain text or custom React nodes.',
+    packageNotes: 'Adapted from BBeats WAM rack presentation without styled-components, runtime plugin hosts, stores, or automation write coupling.',
+    previewSize: 'wide',
+    variants: [
+      { id: 'default', label: 'Track rack', description: 'Instrument and effect chain.' },
+      { id: 'mastering', label: 'Mastering', description: 'Master bus rack with limiter telemetry.' },
+      { id: 'bypass', label: 'Bypass state', description: 'Bypassed device and warning flow state.' }
+    ],
+    render: (variant) => <DeviceRackPanelStory variant={variant} />
   },
   {
     id: 'flip-tile',

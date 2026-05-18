@@ -1634,6 +1634,652 @@
   background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.14) 0 1px, transparent 1px 3px);
 }
 
+.crui-dungeon-card {
+  --crui-dungeon-card-accent: #e6b44c;
+  background:
+    radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--crui-dungeon-card-accent) 30%, transparent), transparent 28%),
+    linear-gradient(160deg, #121826, #283241 54%, #111827);
+  border: 1px solid color-mix(in srgb, var(--crui-dungeon-card-accent) 72%, #111827);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(10, 16, 27, 0.28);
+  color: #f8fafc;
+  display: grid;
+  min-height: 248px;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  width: 176px;
+}
+
+.crui-dungeon-card--ember {
+  --crui-dungeon-card-accent: #fb923c;
+}
+
+.crui-dungeon-card--rune {
+  --crui-dungeon-card-accent: #a78bfa;
+}
+
+.crui-dungeon-card--frost {
+  --crui-dungeon-card-accent: #7dd3fc;
+}
+
+.crui-dungeon-card__rim {
+  border: 1px solid color-mix(in srgb, var(--crui-dungeon-card-accent) 72%, transparent);
+  border-radius: 7px;
+  inset: 7px;
+  position: absolute;
+}
+
+.crui-dungeon-card__face {
+  align-content: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  min-height: 100%;
+  padding: 18px;
+  position: relative;
+}
+
+.crui-dungeon-card__sigil {
+  background: var(--crui-dungeon-card-accent);
+  box-shadow: 0 0 34px color-mix(in srgb, var(--crui-dungeon-card-accent) 64%, transparent);
+  display: block;
+  height: 74px;
+  opacity: 0.9;
+  width: 74px;
+}
+
+.crui-dungeon-card__sigil--circle {
+  border-radius: 999px;
+}
+
+.crui-dungeon-card__sigil--diamond {
+  transform: rotate(45deg);
+}
+
+.crui-dungeon-card__sigil--hex {
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+}
+
+.crui-dungeon-card__sigil--triangle {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.crui-dungeon-card strong {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.crui-dungeon-card small {
+  color: rgba(248, 250, 252, 0.72);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.crui-dungeon-card--hidden .crui-dungeon-card__sigil {
+  background:
+    repeating-linear-gradient(45deg, transparent 0 8px, color-mix(in srgb, var(--crui-dungeon-card-accent) 28%, transparent) 8px 10px),
+    rgba(255, 255, 255, 0.06);
+  border: 1px solid color-mix(in srgb, var(--crui-dungeon-card-accent) 42%, transparent);
+  box-shadow: none;
+}
+
+.crui-relic-grid {
+  background: #101827;
+  border: 1px solid #2f3b4f;
+  border-radius: 8px;
+  color: #f8fafc;
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  width: min(100%, 780px);
+}
+
+.crui-relic-grid__header {
+  display: grid;
+  gap: 4px;
+}
+
+.crui-relic-grid__header span,
+.crui-memory-hud span,
+.crui-memory-hud small {
+  color: rgba(248, 250, 252, 0.68);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.crui-relic-grid__header strong {
+  font-size: 22px;
+}
+
+.crui-relic-grid__choices {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.crui-relic-card {
+  background:
+    radial-gradient(circle at 50% 0, rgba(230, 180, 76, 0.18), transparent 38%),
+    linear-gradient(180deg, #1f2937, #111827);
+  border: 1px solid #6f5b32;
+  border-radius: 8px;
+  color: #f8fafc;
+  cursor: pointer;
+  display: grid;
+  gap: 8px;
+  min-height: 214px;
+  overflow: hidden;
+  padding: 14px;
+  position: relative;
+  text-align: left;
+}
+
+.crui-relic-card--uncommon {
+  border-color: #2aa876;
+}
+
+.crui-relic-card--rare {
+  border-color: #7dd3fc;
+}
+
+.crui-relic-card__runes {
+  background: repeating-linear-gradient(90deg, rgba(248, 250, 252, 0.1) 0 1px, transparent 1px 12px);
+  height: 3px;
+  margin-bottom: 5px;
+}
+
+.crui-relic-card__rarity {
+  color: #e6b44c;
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.crui-relic-card strong {
+  font-size: 18px;
+}
+
+.crui-relic-card em,
+.crui-relic-card small,
+.crui-relic-card p {
+  color: rgba(248, 250, 252, 0.72);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.crui-relic-card small {
+  color: #f8d58f;
+  font-weight: 800;
+}
+
+.crui-memory-hud {
+  align-items: center;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(230, 180, 76, 0.32);
+  border-radius: 8px;
+  color: #f8fafc;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: auto minmax(150px, 1fr) auto auto;
+  padding: 12px;
+  width: min(100%, 780px);
+}
+
+.crui-memory-hud__floor {
+  align-items: center;
+  aspect-ratio: 1;
+  background: linear-gradient(180deg, rgba(230, 180, 76, 0.16), rgba(230, 180, 76, 0.04));
+  border: 1px solid rgba(230, 180, 76, 0.52);
+  clip-path: polygon(50% 0, 94% 24%, 94% 76%, 50% 100%, 6% 76%, 6% 24%);
+  display: grid;
+  justify-items: center;
+  padding: 10px;
+  width: 74px;
+}
+
+.crui-memory-hud__floor strong {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.crui-memory-hud__core {
+  display: grid;
+  gap: 3px;
+}
+
+.crui-memory-hud__core strong {
+  color: #f8d58f;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.crui-memory-hud__lives {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.crui-memory-hud__heart,
+.crui-memory-hud__heart--active {
+  color: rgba(248, 250, 252, 0.22);
+  font-size: 17px;
+}
+
+.crui-memory-hud__heart--active {
+  color: #fb7185;
+}
+
+.crui-memory-hud__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.crui-memory-hud__metrics div {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: grid;
+  gap: 2px;
+  min-width: 78px;
+  padding: 7px 9px;
+}
+
+.crui-memory-hud__metrics strong {
+  font-size: 15px;
+}
+
+.crui-dungeon-map-panel {
+  background:
+    radial-gradient(circle at 16% 16%, rgba(46, 204, 113, 0.18), transparent 28%),
+    linear-gradient(135deg, #101827, #1d2736 52%, #111827);
+  border: 1px solid rgba(205, 213, 224, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 18px 44px rgba(17, 24, 39, 0.28);
+  color: #f8fafc;
+  display: grid;
+  gap: 16px;
+  overflow: hidden;
+  padding: 18px;
+  width: min(100%, 780px);
+}
+
+.crui-dungeon-map-panel--compact {
+  width: min(100%, 520px);
+}
+
+.crui-dungeon-map-panel__header {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.crui-dungeon-map-panel__header div {
+  display: grid;
+  gap: 4px;
+}
+
+.crui-dungeon-map-panel__header span,
+.crui-dungeon-map-panel__details span {
+  color: rgba(226, 232, 240, 0.66);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.crui-dungeon-map-panel__header strong {
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.crui-dungeon-map-panel__header small {
+  background: rgba(248, 250, 252, 0.08);
+  border: 1px solid rgba(248, 250, 252, 0.14);
+  border-radius: 999px;
+  color: #d7f7e8;
+  font-size: 12px;
+  font-weight: 850;
+  padding: 7px 10px;
+  white-space: nowrap;
+}
+
+.crui-dungeon-map-panel__body {
+  align-items: stretch;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(260px, 1fr) minmax(170px, 0.36fr);
+}
+
+.crui-dungeon-map {
+  background:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    rgba(15, 23, 42, 0.72);
+  background-size: calc(100% / max(var(--crui-map-width), 1)) calc(100% / max(var(--crui-map-height), 1));
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(var(--crui-map-width), minmax(44px, 1fr));
+  grid-template-rows: repeat(var(--crui-map-height), minmax(44px, 1fr));
+  min-height: 280px;
+  padding: 18px;
+  position: relative;
+}
+
+.crui-dungeon-map__routes {
+  inset: 18px;
+  overflow: visible;
+  pointer-events: none;
+  position: absolute;
+}
+
+.crui-dungeon-map__routes line {
+  stroke: rgba(215, 247, 232, 0.32);
+  stroke-linecap: round;
+  stroke-width: 0.08;
+}
+
+.crui-dungeon-map__room {
+  align-items: center;
+  align-self: center;
+  background: #253044;
+  border: 1px solid rgba(226, 232, 240, 0.28);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 10px 24px rgba(2, 6, 23, 0.22);
+  color: #f8fafc;
+  display: inline-grid;
+  font-size: 13px;
+  font-weight: 900;
+  grid-column: var(--crui-room-x);
+  grid-row: var(--crui-room-y);
+  height: 42px;
+  justify-self: center;
+  min-width: 42px;
+  padding: 0 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.crui-dungeon-map__room--start {
+  background: #1f7a52;
+}
+
+.crui-dungeon-map__room--enemy,
+.crui-dungeon-map__room--trap {
+  background: #8f342f;
+}
+
+.crui-dungeon-map__room--treasure {
+  background: #9a6a1d;
+}
+
+.crui-dungeon-map__room--puzzle,
+.crui-dungeon-map__room--library {
+  background: #385c9d;
+}
+
+.crui-dungeon-map__room--secret,
+.crui-dungeon-map__room--shop {
+  background: #5b3f95;
+}
+
+.crui-dungeon-map__room--boss {
+  background: #9c2c58;
+}
+
+.crui-dungeon-map__room--visited {
+  box-shadow: inset 0 0 0 2px rgba(215, 247, 232, 0.32), 0 10px 24px rgba(2, 6, 23, 0.22);
+}
+
+.crui-dungeon-map__room--current {
+  border-color: #d7f7e8;
+  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.2), 0 0 24px rgba(46, 204, 113, 0.38);
+  transform: translateY(-2px);
+}
+
+.crui-dungeon-map__room--locked {
+  filter: saturate(0.55);
+  opacity: 0.72;
+}
+
+.crui-dungeon-map-panel__details {
+  align-content: start;
+  display: grid;
+  gap: 10px;
+}
+
+.crui-dungeon-map-panel__details div {
+  background: rgba(248, 250, 252, 0.08);
+  border: 1px solid rgba(248, 250, 252, 0.12);
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  padding: 11px;
+}
+
+.crui-dungeon-map-panel__details strong {
+  color: #f8fafc;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.crui-device-rack {
+  background: #f8fafc;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.12);
+  color: #17202a;
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  width: min(100%, 760px);
+}
+
+.crui-device-rack__header {
+  align-items: start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.crui-device-rack__header div {
+  display: grid;
+  gap: 3px;
+}
+
+.crui-device-rack__header span,
+.crui-device-card__header span,
+.crui-device-rack__stage small,
+.crui-device-card__param span {
+  color: #637083;
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.crui-device-rack__header strong {
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.crui-device-rack__header small {
+  background: #edf1f6;
+  border: 1px solid #d8dee8;
+  border-radius: 999px;
+  color: #263241;
+  font-size: 12px;
+  font-weight: 850;
+  padding: 7px 10px;
+  white-space: nowrap;
+}
+
+.crui-device-rack__flow,
+.crui-device-rack__telemetry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.crui-device-rack__flow-item {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.crui-device-rack__stage {
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  display: grid;
+  gap: 2px;
+  min-width: 96px;
+  padding: 8px 10px;
+}
+
+.crui-device-rack__stage--warning {
+  border-color: #f59e0b;
+}
+
+.crui-device-rack__stage strong {
+  color: #263241;
+  font-size: 13px;
+}
+
+.crui-device-rack__arrow {
+  color: #8c98aa;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.crui-device-rack__telemetry span {
+  background: #edf1f6;
+  border: 1px solid #d8dee8;
+  border-radius: 999px;
+  color: #4a5668;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 8px;
+}
+
+.crui-device-rack__plugins {
+  display: grid;
+  gap: 10px;
+}
+
+.crui-device-card {
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-left: 4px solid transparent;
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.crui-device-card--selected {
+  border-left-color: #2457c5;
+  box-shadow: 0 0 0 3px rgba(36, 87, 197, 0.1);
+}
+
+.crui-device-card--bypassed {
+  opacity: 0.68;
+}
+
+.crui-device-card__header {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.crui-device-card__header div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.crui-device-card__header strong {
+  color: #17202a;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crui-device-card__health {
+  border: 1px solid #2aa876;
+  border-radius: 999px;
+  color: #1f7a52;
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 7px;
+}
+
+.crui-device-card__health--info {
+  border-color: #2457c5;
+  color: #2457c5;
+}
+
+.crui-device-card__health--warning {
+  border-color: #f59e0b;
+  color: #9a6a1d;
+}
+
+.crui-device-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.crui-device-card__meta span {
+  background: #f4f6fa;
+  border: 1px solid #e1e6ef;
+  border-radius: 999px;
+  color: #596579;
+  font-size: 12px;
+  font-weight: 750;
+  padding: 3px 7px;
+}
+
+.crui-device-card__params {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.crui-device-card__param {
+  background: #f8fafc;
+  border: 1px solid #e1e6ef;
+  border-radius: 8px;
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 8px;
+}
+
+.crui-device-card__param strong {
+  color: #263241;
+  font-size: 13px;
+}
+
+.crui-device-card__param small {
+  color: #2457c5;
+  font-size: 11px;
+  font-weight: 900;
+}
+
 @media (max-width: 640px) {
   .crui-action-dock--dock {
     align-items: stretch;
@@ -1673,6 +2319,17 @@
 
   .crui-drum-pad-grid {
     grid-template-columns: repeat(2, minmax(84px, 1fr));
+  }
+
+  .crui-relic-grid__choices,
+  .crui-memory-hud,
+  .crui-dungeon-map-panel__body,
+  .crui-device-card__params {
+    grid-template-columns: 1fr;
+  }
+
+  .crui-memory-hud__floor {
+    width: 64px;
   }
 
   .crui-game-hud {

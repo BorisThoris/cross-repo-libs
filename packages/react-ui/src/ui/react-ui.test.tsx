@@ -5,6 +5,7 @@ import { AeroLiquidBackground } from './AeroLiquidBackground.js';
 import { FlipTile, PreviewCard } from './ArchiveCards.js';
 import { Button } from './Button.js';
 import { Callout } from './Callout.js';
+import { DeviceRackPanel } from './DeviceRackPanel.js';
 import { DisplayTitle } from './DisplayTitle.js';
 import { EmptyState } from './EmptyState.js';
 import { ControlHints, GameHudOverlay, InventorySlotGrid, ResourceMeter } from './GameHud.js';
@@ -13,6 +14,8 @@ import { DrumPadGrid, PianoKeyboard, TambourinePad } from './InstrumentControls.
 import { InstrumentPicker } from './InstrumentPicker.js';
 import { LibraryCard } from './LibraryCard.js';
 import { FilterChip, LibraryToolbar, SearchInput, SegmentedControl } from './LibraryToolbar.js';
+import { DungeonMapPanel } from './DungeonMapPanel.js';
+import { DungeonCardFace, MemoryHudStrip, RelicChoiceGrid } from './MemoryDungeonKit.js';
 import { ModalDialog } from './ModalDialog.js';
 import { LevelMeter, MiniTimeline, StepGrid, TransportControls } from './MusicWorkspace.js';
 import { OverlayActionDock } from './OverlayActionDock.js';
@@ -382,5 +385,95 @@ describe('react-ui components', () => {
     expect(container.textContent).toContain('Energy Core');
     expect(container.textContent).toContain('1:35');
     expect(container.querySelector('.crui-scanline-overlay--strong')).toBeTruthy();
+  });
+
+  test('memory dungeon kit renders card, relic, and HUD surfaces', async () => {
+    const onPick = vi.fn();
+    await render(
+      <>
+        <DungeonCardFace label="12" sigil="hex" tone="rune" />
+        <RelicChoiceGrid
+          choices={[
+            { id: 'mirror', title: 'Mirror Lens', description: 'Preview one hidden pair.', impact: '+Recall', rarity: 'rare' },
+            { id: 'ember', title: 'Ember Cache', description: 'Bank shards on long chains.', impact: '+Score', rarity: 'uncommon' }
+          ]}
+          onPick={onPick}
+        />
+        <MemoryHudStrip floor={9} score="24,100" />
+      </>
+    );
+
+    expect(container.textContent).toContain('Mirror Lens');
+    expect(container.textContent).toContain('24,100');
+    expect(container.querySelector('.crui-dungeon-card--rune')).toBeTruthy();
+
+    await act(async () => {
+      Array.from(container.querySelectorAll('.crui-relic-card')).find((button) => button.textContent?.includes('Ember Cache'))?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    });
+    expect(onPick).toHaveBeenCalledWith({
+      id: 'ember',
+      title: 'Ember Cache',
+      description: 'Bank shards on long chains.',
+      impact: '+Score',
+      rarity: 'uncommon'
+    });
+  });
+
+  test('dungeon map panel renders generated room routes and current room details', async () => {
+    await render(
+      <DungeonMapPanel
+        algorithm="T-Shape Pattern"
+        connections={[
+          { from: 'start', to: 'enemy' },
+          { from: 'enemy', to: 'treasure' }
+        ]}
+        currentRoomId="enemy"
+        rooms={[
+          { id: 'start', label: 'S', type: 'start', visited: true, x: 0, y: 1 },
+          { id: 'enemy', label: 'E', type: 'enemy', x: 1, y: 1 },
+          { id: 'treasure', label: 'T', locked: true, type: 'treasure', x: 2, y: 1 }
+        ]}
+      />
+    );
+
+    expect(container.textContent).toContain('Ghost Dungeon');
+    expect(container.textContent).toContain('2/3 rooms');
+    expect(container.textContent).toContain('T-Shape Pattern');
+    expect(container.querySelector('.crui-dungeon-map__room--current')?.textContent).toBe('E');
+    expect(container.querySelectorAll('.crui-dungeon-map__routes line')).toHaveLength(2);
+  });
+
+  test('device rack panel renders plugins, signal flow, and parameter automation state', async () => {
+    await render(
+      <DeviceRackPanel
+        plugins={[
+          {
+            id: 'filter',
+            name: 'State Variable Filter',
+            health: 'info',
+            latency: '0.2 ms',
+            parameters: [
+              { label: 'Cutoff', value: '2.4 kHz', automated: true },
+              { label: 'Resonance', value: '38%' }
+            ],
+            vendor: 'BBeats'
+          },
+          {
+            id: 'compressor',
+            name: 'Bus Compressor',
+            bypassed: true,
+            health: 'warning',
+            latency: '0.5 ms'
+          }
+        ]}
+        selectedPluginId="filter"
+      />
+    );
+
+    expect(container.textContent).toContain('Device Rack');
+    expect(container.textContent).toContain('State Variable Filter');
+    expect(container.textContent).toContain('Auto');
+    expect(container.querySelector('.crui-device-card--selected')?.textContent).toContain('2.4 kHz');
+    expect(container.querySelector('.crui-device-card--bypassed')?.textContent).toContain('Bypassed');
   });
 });

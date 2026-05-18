@@ -328,8 +328,10 @@ body {
 .story-workbench,
 .story-texture-workspace,
 .story-music-workspace,
+.story-device-rack-stage,
 .story-dialog-demo,
 .story-aero-stage,
+.story-dungeon-map-stage,
 .story-flip-grid {
   width: min(100%, 720px);
 }
@@ -395,7 +397,8 @@ body {
 
 .story-workbench,
 .story-texture-workspace,
-.story-music-workspace {
+.story-music-workspace,
+.story-device-rack-stage {
   display: grid;
   gap: 16px;
 }
@@ -409,6 +412,11 @@ body {
   border: 1px solid #d8dee8;
   border-radius: 8px;
   padding: 18px;
+}
+
+.story-device-rack-stage {
+  justify-items: center;
+  width: min(100%, 820px);
 }
 
 .story-music-workspace__top {
@@ -540,10 +548,28 @@ body {
 }
 
 .story-instrument-stack,
+.story-memory-dungeon-kit,
 .story-spellcaster-stage {
   display: grid;
   gap: 18px;
   justify-items: center;
+}
+
+.story-memory-dungeon-kit {
+  width: min(100%, 820px);
+}
+
+.story-dungeon-map-stage {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 820px);
+}
+
+.story-memory-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
 }
 
 .story-spellcaster-stage {

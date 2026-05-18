@@ -324,6 +324,41 @@
     "reason": "Projectile effect language rebuilt as lightweight R3F geometry without Rapier, custom shader, or gameplay store coupling."
   },
   {
+    "name": "MemoryDungeonKit",
+    "sourceRepo": "memory-dungeon",
+    "sourcePaths": [
+      "memory-dungeon/src/renderer/components/GameplayHudBar.tsx",
+      "memory-dungeon/src/renderer/components/RelicDraftOfferPanel.tsx",
+      "memory-dungeon/src/renderer/cardFace/programmaticCardFace.ts"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Memory-card, relic-choice, and HUD patterns rebuilt as plain React/CSS showcase components without game state, assets, Pixi, or WebGL coupling."
+  },
+  {
+    "name": "DungeonMapPanel",
+    "sourceRepo": "gem-dungeon",
+    "sourcePaths": [
+      "gem-dungeon/src/components/MapUI.tsx",
+      "gem-dungeon/src/types/map.ts"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Generated dungeon map overlay rebuilt as a typed, store-free React/CSS component with reusable room, route, current, visited, and locked states."
+  },
+  {
+    "name": "DeviceRackPanel",
+    "sourceRepo": "BBeats",
+    "sourcePaths": [
+      "BBeats/src/components/Editor/components/Timelines/WamPluginRackPanel.jsx",
+      "BBeats/src/components/Editor/components/Timelines/WamPluginCard.jsx",
+      "BBeats/src/components/Editor/components/Timelines/wamRackPresentationUtils.js"
+    ],
+    "status": "accepted",
+    "package": "@cross-repo-libs/react-ui",
+    "reason": "Plugin rack presentation rebuilt as a typed React/CSS device-chain component without WAM runtime, styled-components, stores, or automation write coupling."
+  },
+  {
     "name": "Chest / breakable object primitives",
     "sourceRepo": "ThreeJsGem-Fixed",
     "sourcePaths": [
