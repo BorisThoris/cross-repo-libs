@@ -7,7 +7,7 @@ Public custom component Storybook and npm workspaces monorepo for reusable React
 | Path | Purpose |
 |------|---------|
 | [`apps/example-web`](apps/example-web) | Public custom Storybook-style Vite app for browsing component stories, variants, docs, and live previews. |
-| [`packages/react-ui`](packages/react-ui) | Reusable React UI components: buttons, display titles, callouts, panels, cards, preview cards, flip tiles, library toolbars, texture tools, music controls, dialogs, pickers, HUDs, and WebGL backgrounds. |
+| [`packages/react-ui`](packages/react-ui) | Reusable React UI components: buttons, display titles, callouts, panels, cards, preview cards, flip tiles, library toolbars, compact reading chrome, reading progress, bookmark actions, texture tools, music controls, dialogs, pickers, HUDs, and WebGL backgrounds. |
 | [`packages/three-primitives`](packages/three-primitives) | Portable React Three Fiber primitives, including torch, brazier, first-person hand, scene controls, dungeon props, environment props, item orbs, traps, and particles. |
 | [`packages/notifications`](packages/notifications) | Toast + confirm stack: Zustand store, imperative `notify*` bridge, accessible DOM host, and CSS variables. |
 | [`packages/ai-common`](packages/ai-common) | Shared helpers for local AI generation CLIs. |
@@ -93,6 +93,62 @@ Import optional styles where a package exposes them:
 ```ts
 import '@cross-repo-libs/react-ui/styles.css';
 import '@cross-repo-libs/notifications/styles.css';
+```
+
+### Reading Chrome Primitives
+
+`CompactToolbar`, `ReadingProgress`, and `BookmarkButton` are app-neutral building blocks. Consumers own scroll detection, persistence, focus management, and navigation behavior.
+
+```tsx
+import {
+  BookmarkButton,
+  CompactToolbar,
+  ReadingProgress
+} from '@cross-repo-libs/react-ui';
+
+<CompactToolbar
+  aria-label={labels.readingControls}
+  center={<ReadingProgress label={labels.readingProgress} value={progressPercent} />}
+  leading={backAction}
+  position="fixed"
+  trailing={
+    <BookmarkButton
+      active={isBookmarked}
+      activeLabel={labels.removeBookmark}
+      inactiveLabel={labels.addBookmark}
+      onClick={toggleBookmark}
+    />
+  }
+  translateY={chromeVisible ? '0%' : '-100%'}
+/>;
+```
+
+The primitives do not contain user-facing locale defaults. Supply the toolbar accessible name, reading-progress label, and both bookmark-state labels from the consuming application's localization layer. `ReadingProgress` uses a native determinate `progress` element and clamps its value to the configured range. `BookmarkButton` provides a 44px minimum touch target.
+
+Theme the primitives without replacing their structural classes:
+
+```css
+.reader-chrome {
+  --crui-compact-toolbar-z-index: 40;
+  --crui-compact-toolbar-transition: 180ms ease;
+  --crui-reading-progress-track: rgb(255 255 255 / 16%);
+  --crui-reading-progress-fill: #d5a84b;
+  --crui-bookmark-button-background: transparent;
+  --crui-bookmark-button-color: #f6f0df;
+  --crui-bookmark-button-active-background: #23604f;
+  --crui-bookmark-button-active-color: #ffffff;
+  --crui-bookmark-button-radius: 999px;
+}
+```
+
+The local `file:` dependency above is for development on a machine containing both repositories. CI and deployment consumers must use a published, pinned package version so clean checkouts are reproducible:
+
+```json
+{
+  "dependencies": {
+    "@cross-repo-libs/react-ui": "0.1.0"
+  }
+}
 ```
 
 ## Maintenance

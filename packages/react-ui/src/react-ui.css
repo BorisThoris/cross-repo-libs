@@ -2346,3 +2346,164 @@
     justify-self: stretch;
   }
 }
+
+.crui-reading-progress {
+  display: grid;
+  gap: 0.375rem;
+  min-width: 0;
+}
+
+.crui-reading-progress__summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.crui-reading-progress__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crui-reading-progress__value {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.crui-reading-progress__bar {
+  width: 100%;
+  height: 0.375rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  background: var(--crui-reading-progress-track, rgba(255, 255, 255, 0.16));
+  color: var(--crui-reading-progress-fill, currentColor);
+  accent-color: var(--crui-reading-progress-fill, currentColor);
+}
+
+.crui-reading-progress__bar::-webkit-progress-bar {
+  border-radius: inherit;
+  background: var(--crui-reading-progress-track, rgba(255, 255, 255, 0.16));
+}
+
+.crui-reading-progress__bar::-webkit-progress-value {
+  border-radius: inherit;
+  background: var(--crui-reading-progress-fill, currentColor);
+}
+
+.crui-reading-progress__bar::-moz-progress-bar {
+  border-radius: inherit;
+  background: var(--crui-reading-progress-fill, currentColor);
+}
+
+.crui-compact-toolbar {
+  --crui-compact-toolbar-translate-y: 0%;
+
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(44px, auto) minmax(0, 1fr) minmax(44px, auto);
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  transform: translate3d(0, var(--crui-compact-toolbar-translate-y), 0);
+  transition: transform var(--crui-compact-toolbar-transition, 180ms ease);
+  will-change: transform;
+}
+
+.crui-compact-toolbar--sticky {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--crui-compact-toolbar-z-index, 20);
+}
+
+.crui-compact-toolbar--fixed {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: var(--crui-compact-toolbar-z-index, 20);
+  padding-block-start: env(safe-area-inset-top, 0px);
+}
+
+.crui-compact-toolbar__leading,
+.crui-compact-toolbar__center,
+.crui-compact-toolbar__trailing {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 44px;
+}
+
+.crui-compact-toolbar__leading {
+  justify-content: flex-start;
+}
+
+.crui-compact-toolbar__center {
+  justify-content: center;
+}
+
+.crui-compact-toolbar__trailing {
+  justify-content: flex-end;
+}
+
+.crui-bookmark-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.625rem;
+  border: 1px solid currentColor;
+  border-radius: var(--crui-bookmark-button-radius, 999px);
+  background: var(--crui-bookmark-button-background, transparent);
+  color: var(--crui-bookmark-button-color, inherit);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.crui-bookmark-button--active {
+  background: var(--crui-bookmark-button-active-background, #23604f);
+  color: var(--crui-bookmark-button-active-color, #ffffff);
+}
+
+.crui-bookmark-button__icon {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+}
+
+.crui-bookmark-button__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+}
+
+.crui-bookmark-button--active .crui-bookmark-button__icon svg {
+  fill: currentColor;
+}
+
+.crui-bookmark-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.crui-bookmark-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crui-compact-toolbar {
+    transition: none;
+  }
+}

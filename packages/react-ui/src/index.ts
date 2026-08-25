@@ -134,6 +134,16 @@ export {
   type PanelVariant
 } from './ui/Panel.js';
 export {
+  BookmarkButton,
+  CompactToolbar,
+  ReadingProgress,
+  type BookmarkButtonProps,
+  type CompactToolbarElement,
+  type CompactToolbarPosition,
+  type CompactToolbarProps,
+  type ReadingProgressProps
+} from './ui/ReadingChrome.js';
+export {
   StatTile,
   type StatTileDensity,
   type StatTileProps

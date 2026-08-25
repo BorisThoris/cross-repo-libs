@@ -20,6 +20,7 @@ import { ModalDialog } from './ModalDialog.js';
 import { LevelMeter, MiniTimeline, StepGrid, TransportControls } from './MusicWorkspace.js';
 import { OverlayActionDock } from './OverlayActionDock.js';
 import { Panel } from './Panel.js';
+import { BookmarkButton, CompactToolbar, ReadingProgress } from './ReadingChrome.js';
 import { EnergyCore, ScanlineOverlay, TimerBadge } from './SpellcasterHud.js';
 import { StatTile } from './StatTile.js';
 import { SelectionCheckbox, TagEditor } from './TagEditor.js';
@@ -83,6 +84,73 @@ describe('react-ui components', () => {
     expect(panel?.className).toContain('crui-panel--padding-lg');
     expect(stat?.textContent).toContain('Tests');
     expect(stat?.textContent).toContain('42');
+  });
+
+  test('ReadingProgress clamps determinate values and exposes its visible format', async () => {
+    await render(
+      <ReadingProgress
+        formatValue={(value, max) => `${value} of ${max}`}
+        label="Chapter progress"
+        max={10}
+        value={14}
+      />
+    );
+
+    const progress = container.querySelector('progress') as HTMLProgressElement;
+    expect(progress.value).toBe(10);
+    expect(progress.max).toBe(10);
+    expect(progress.getAttribute('aria-label')).toBe('Chapter progress');
+    expect(container.querySelector('.crui-reading-progress__value')?.textContent).toBe('10 of 10');
+  });
+
+  test('CompactToolbar exposes slots, placement, classes, and translated styles', async () => {
+    await render(
+      <CompactToolbar
+        aria-label="Reading controls"
+        as="nav"
+        center={<span>Progress</span>}
+        className="book-toolbar"
+        leading={<button type="button">Back</button>}
+        position="fixed"
+        trailing={<button type="button">Settings</button>}
+        translateY="-100%"
+      />
+    );
+
+    const toolbar = container.querySelector('nav') as HTMLElement;
+    expect(toolbar.className).toContain('crui-compact-toolbar--fixed');
+    expect(toolbar.className).toContain('book-toolbar');
+    expect(toolbar.style.getPropertyValue('--crui-compact-toolbar-translate-y')).toBe('-100%');
+    expect(container.querySelector('.crui-compact-toolbar__leading')?.textContent).toBe('Back');
+    expect(container.querySelector('.crui-compact-toolbar__center')?.textContent).toBe('Progress');
+    expect(container.querySelector('.crui-compact-toolbar__trailing')?.textContent).toBe('Settings');
+  });
+
+  test('BookmarkButton switches accessible labels and preserves button behavior', async () => {
+    const onClick = vi.fn();
+    await render(
+      <BookmarkButton active activeLabel="Remove bookmark" inactiveLabel="Add bookmark" onClick={onClick}>
+        Saved
+      </BookmarkButton>
+    );
+
+    let button = container.querySelector('.crui-bookmark-button') as HTMLButtonElement;
+    expect(button.getAttribute('aria-label')).toBe('Remove bookmark');
+    expect(button.getAttribute('aria-pressed')).toBe('true');
+    expect(button.type).toBe('button');
+    await act(async () => {
+      button.click();
+    });
+    expect(onClick).toHaveBeenCalledTimes(1);
+
+    await act(async () => {
+      root!.render(
+        <BookmarkButton activeLabel="Remove bookmark" inactiveLabel="Add bookmark" onClick={onClick} />
+      );
+    });
+    button = container.querySelector('.crui-bookmark-button') as HTMLButtonElement;
+    expect(button.getAttribute('aria-label')).toBe('Add bookmark');
+    expect(button.getAttribute('aria-pressed')).toBe('false');
   });
 
   test('DisplayTitle and Callout render public high-level UI patterns', async () => {
