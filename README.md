@@ -169,3 +169,19 @@ Deploy the example web app from the monorepo root so workspace packages resolve 
 - Public URL target: `https://cross-repo-libs.pages.dev/`
 
 Do not enable Cloudflare Access for the demo deployment. Leave frame-blocking headers unset so the portfolio can iframe the public build.
+
+## Shared packages
+
+- `@cross-repo-libs/react-ui`: reusable React UI primitives.
+- `@cross-repo-libs/book-engine-core`: dependency-free book package contracts, validation, and repository assembly.
+- `@cross-repo-libs/book-engine-react`: React provider and hooks for a core book package.
+
+## Release artifacts
+
+Packages release independently with package-specific Git tags: `react-ui-vX.Y.Z`, `book-engine-core-vX.Y.Z`, and `book-engine-react-vX.Y.Z`. Attach the package tarball produced by `npm pack` to its matching GitHub Release and pin consumers to that exact asset URL.
+
+Release tags and tarball assets are immutable. Never replace or rebuild an existing release asset; publish fixes under a new package version and tag.
+
+## Book engine boundary
+
+Consumers assemble the book package and inject repository, storage, theme, and route implementations. Shared engine packages must not import consumer content modules, application singletons, routers, or persistence implementations.
