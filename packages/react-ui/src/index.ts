@@ -171,4 +171,3 @@ export {
   type TexturePresetCardProps,
   type TexturePreviewTileProps
 } from './ui/TextureKit.js';
-import './react-ui.css';

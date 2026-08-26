@@ -88,7 +88,7 @@ Local file link example:
 }
 ```
 
-Import optional styles where a package exposes them:
+The React UI JavaScript entrypoint does not load CSS automatically. Import package styles explicitly once in the browser application entrypoint:
 
 ```ts
 import '@cross-repo-libs/react-ui/styles.css';
@@ -146,7 +146,7 @@ The local `file:` dependency above is for development on a machine containing bo
 ```json
 {
   "dependencies": {
-    "@cross-repo-libs/react-ui": "0.1.0"
+    "@cross-repo-libs/react-ui": "0.1.1"
   }
 }
 ```

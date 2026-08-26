@@ -1,6 +1,6 @@
 {
   "name": "@cross-repo-libs/react-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Curated reusable React UI components extracted and refined from local portfolio repos.",
   "type": "module",
   "sideEffects": [
@@ -20,7 +20,8 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node ./scripts/copy-css.mjs",
-    "prepublishOnly": "npm run build"
+    "check:node-import": "node ./scripts/check-node-import.mjs",
+    "prepack": "npm run build && npm run check:node-import"
   },
   "peerDependencies": {
     "react": ">=18",
