@@ -56,6 +56,15 @@ export default {
   analysisNotes:
     "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
 
+  // Where the link-preview card lives: the page head that carries the Open
+  // Graph tags, and the static directory the image is published from.
+  social: {
+    "htmlFile": "apps/example-web/index.html",
+    "staticDir": "apps/example-web/public",
+    "imageName": "og-image.jpg",
+    "imageUrlPath": "/og-image.jpg"
+  },
+
   media: {
     sourceDir: path.join(portfolioRoot, "public", "project-shots", "cross-repo-libs", "latest"),
     publicPathPrefix: "/project-shots/cross-repo-libs/latest",
