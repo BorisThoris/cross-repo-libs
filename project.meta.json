@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-03T20:39:08.014Z",
+  "generatedAt": "2026-09-03T20:45:31.209Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -150,7 +150,7 @@
   "metrics": {
     "sourceFiles": 110,
     "testFiles": 20,
-    "sourceLines": 17036,
+    "sourceLines": 17039,
     "largestDirectories": [
       {
         "directory": "packages",
@@ -189,10 +189,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "aa0026e",
-    "lastCommitDate": "2026-08-26T14:09:59+03:00",
-    "lastCommitSubject": "Make react UI package SSR-safe",
-    "commitCount": 16,
+    "head": "8ff8a7d",
+    "lastCommitDate": "2026-09-03T23:41:59+03:00",
+    "lastCommitSubject": "Add project metadata and its regenerator",
+    "commitCount": 17,
     "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
   },
   "readme": {
