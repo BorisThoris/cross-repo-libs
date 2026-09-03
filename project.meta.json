@@ -1,0 +1,202 @@
+{
+  "$schema": "./scripts/project.meta.schema.json",
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-03T20:39:08.014Z",
+  "generatedBy": "scripts/generate-project-meta.mjs",
+  "identity": {
+    "slug": "cross-repo-libs",
+    "repoName": "cross-repo-libs",
+    "packageName": "cross-repo-libs",
+    "version": "0.0.0",
+    "title": "Cross Repo Libs",
+    "subtitle": "Reusable workspace packages",
+    "description": "A monorepo of shared packages and an example web app that demonstrates local notifications and reusable runtime utilities.",
+    "tags": [
+      "Workspaces",
+      "TypeScript",
+      "React",
+      "Vite"
+    ],
+    "accent": "#a78bfa",
+    "classification": "web-library",
+    "showcaseTier": "showcase",
+    "showcaseOrder": 5
+  },
+  "links": {
+    "deploymentUrl": "https://cross-repo-libs-git.pages.dev/",
+    "localUrl": "http://127.0.0.1:4105/",
+    "repository": "https://github.com/BorisThoris/cross-repo-libs"
+  },
+  "runtime": {
+    "packageManager": "npm",
+    "nodeEngine": ">=20",
+    "buildCommand": "npm run build --workspace=example-web",
+    "buildOutput": "apps/example-web/dist",
+    "runCommand": "npm run dev --workspace=example-web -- --host 127.0.0.1 --port 4105",
+    "devPort": 4105,
+    "scripts": [
+      "build",
+      "components:scan",
+      "reuse:scan",
+      "test",
+      "test:watch",
+      "lint",
+      "example:dev",
+      "storybook:dev",
+      "premcp:smoke",
+      "mcp:smoke",
+      "meta",
+      "meta:check"
+    ]
+  },
+  "capture": {
+    "route": "/"
+  },
+  "media": {
+    "source": "portfolio-capture",
+    "directory": "C:/Users/Gaming PC/Desktop/Repos/portfolio/public/project-shots/cross-repo-libs/latest",
+    "primary": "/project-shots/cross-repo-libs/latest/card.jpg",
+    "images": [
+      {
+        "profile": "card",
+        "file": "card.jpg",
+        "path": "/project-shots/cross-repo-libs/latest/card.jpg",
+        "bytes": 178754,
+        "width": 1600,
+        "height": 900,
+        "capturedAt": "2026-08-27T12:12:58.300Z"
+      },
+      {
+        "profile": "desktop",
+        "file": "desktop.jpg",
+        "path": "/project-shots/cross-repo-libs/latest/desktop.jpg",
+        "bytes": 167739,
+        "width": 1440,
+        "height": 900,
+        "capturedAt": "2026-08-27T12:13:00.250Z"
+      },
+      {
+        "profile": "full",
+        "file": "full.jpg",
+        "path": "/project-shots/cross-repo-libs/latest/full.jpg",
+        "bytes": 146155,
+        "width": 1440,
+        "height": 900,
+        "capturedAt": "2026-08-27T12:13:04.178Z"
+      },
+      {
+        "profile": "main",
+        "file": "main.png",
+        "path": "/project-shots/cross-repo-libs/main.png",
+        "bytes": 358761,
+        "width": 1440,
+        "height": 900,
+        "capturedAt": "2026-05-18T12:09:34.706Z"
+      },
+      {
+        "profile": "mobile",
+        "file": "mobile.jpg",
+        "path": "/project-shots/cross-repo-libs/latest/mobile.jpg",
+        "bytes": 44246,
+        "width": 430,
+        "height": 932,
+        "capturedAt": "2026-08-27T12:13:02.179Z"
+      }
+    ]
+  },
+  "stack": {
+    "framework": "React Three Fiber",
+    "language": "TypeScript",
+    "runtimeTargets": [
+      "web"
+    ],
+    "libraries": [
+      {
+        "name": "react",
+        "version": "^19.1.1"
+      },
+      {
+        "name": "react-dom",
+        "version": "^19.1.1"
+      },
+      {
+        "name": "three",
+        "version": "^0.180.0"
+      },
+      {
+        "name": "@react-three/fiber",
+        "version": "^9.3.0"
+      },
+      {
+        "name": "vite",
+        "version": "^6.3.3"
+      },
+      {
+        "name": "typescript",
+        "version": "^5.8.3"
+      }
+    ],
+    "testing": [
+      "vitest"
+    ],
+    "appDirectory": "apps/example-web",
+    "dependencyCount": 0,
+    "devDependencyCount": 13,
+    "workspaces": [
+      "packages/*",
+      "apps/*"
+    ]
+  },
+  "metrics": {
+    "sourceFiles": 110,
+    "testFiles": 20,
+    "sourceLines": 17036,
+    "largestDirectories": [
+      {
+        "directory": "packages",
+        "files": 86
+      },
+      {
+        "directory": "apps",
+        "files": 13
+      },
+      {
+        "directory": "scripts",
+        "files": 5
+      },
+      {
+        "directory": ".",
+        "files": 3
+      },
+      {
+        "directory": "local-models",
+        "files": 3
+      }
+    ],
+    "hasReadme": true,
+    "hasTests": true,
+    "hasCi": false,
+    "hasDocs": false
+  },
+  "scores": {
+    "priorityScore": 89,
+    "demoabilityScore": 82,
+    "depthScore": 80,
+    "polishScore": 72,
+    "uniquenessScore": 84,
+    "maintenanceScore": 80
+  },
+  "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
+  "git": {
+    "branch": "master",
+    "head": "aa0026e",
+    "lastCommitDate": "2026-08-26T14:09:59+03:00",
+    "lastCommitSubject": "Make react UI package SSR-safe",
+    "commitCount": 16,
+    "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
+  },
+  "readme": {
+    "file": "README.md",
+    "heading": "cross-repo-libs"
+  }
+}
