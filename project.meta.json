@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T22:04:26.573Z",
+  "generatedAt": "2026-09-14T22:22:06.927Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -37,14 +37,11 @@
     "scripts": [
       "build",
       "components:scan",
-      "reuse:scan",
       "test",
       "test:watch",
       "lint",
       "example:dev",
       "storybook:dev",
-      "premcp:smoke",
-      "mcp:smoke",
       "meta",
       "meta:check",
       "shots",
@@ -60,53 +57,53 @@
   },
   "media": {
     "source": "repo-local",
-    "directory": "C:/Users/Gaming PC/Desktop/Repos/cross-repo-libs/project-media",
+    "directory": "/home/runner/work/cross-repo-libs/cross-repo-libs/project-media",
     "primary": "project-media/card.jpg",
     "images": [
       {
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 178793,
+        "bytes": 187266,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-03T21:35:28.142Z"
+        "capturedAt": "2026-09-14T22:21:59.808Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 167574,
+        "bytes": 176998,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-03T21:35:29.639Z"
+        "capturedAt": "2026-09-14T22:22:01.525Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 215042,
+        "bytes": 214282,
         "width": 1440,
-        "height": 2620,
-        "capturedAt": "2026-09-03T21:35:32.756Z"
+        "height": 2502,
+        "capturedAt": "2026-09-14T22:22:05.161Z"
       },
       {
         "profile": "mobile",
         "file": "mobile.jpg",
         "path": "project-media/mobile.jpg",
-        "bytes": 44246,
+        "bytes": 46876,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-03T21:35:31.119Z"
+        "capturedAt": "2026-09-14T22:22:03.248Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 128269,
+        "bytes": 134019,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-03T21:35:34.264Z"
+        "capturedAt": "2026-09-14T22:22:06.770Z"
       }
     ]
   },
@@ -154,13 +151,13 @@
     ]
   },
   "metrics": {
-    "sourceFiles": 117,
-    "testFiles": 21,
-    "sourceLines": 19019,
+    "sourceFiles": 96,
+    "testFiles": 16,
+    "sourceLines": 14365,
     "largestDirectories": [
       {
         "directory": "packages",
-        "files": 89
+        "files": 73
       },
       {
         "directory": "apps",
@@ -168,14 +165,10 @@
       },
       {
         "directory": "scripts",
-        "files": 9
+        "files": 7
       },
       {
         "directory": ".",
-        "files": 3
-      },
-      {
-        "directory": "local-models",
         "files": 3
       }
     ],
@@ -195,11 +188,11 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "fb6b723",
-    "lastCommitDate": "2026-09-15T00:38:37+03:00",
-    "lastCommitSubject": "Gate pushes on a current link-preview card and icon set",
-    "commitCount": 24,
-    "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
+    "head": "2c46008",
+    "lastCommitDate": "2026-09-15T01:04:27+03:00",
+    "lastCommitSubject": "Refresh screenshots, card, icons and metadata after every deployment",
+    "commitCount": 25,
+    "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
     "file": "README.md",
