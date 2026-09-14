@@ -12,3 +12,6 @@ local-output/
 .venv*/
 **/.venv*/
 **/tmp/
+
+# Plain reference checkouts of other repos; never part of this tree.
+references/
