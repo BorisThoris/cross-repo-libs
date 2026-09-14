@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T20:27:14.091Z",
+  "generatedAt": "2026-09-14T20:52:44.410Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -156,7 +156,7 @@
   "metrics": {
     "sourceFiles": 117,
     "testFiles": 21,
-    "sourceLines": 18976,
+    "sourceLines": 18999,
     "largestDirectories": [
       {
         "directory": "packages",
@@ -195,10 +195,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "a3abe3e",
-    "lastCommitDate": "2026-09-04T00:53:04+03:00",
-    "lastCommitSubject": "Photograph the project and make its link unfurl",
-    "commitCount": 19,
+    "head": "dad13be",
+    "lastCommitDate": "2026-09-14T23:55:01+03:00",
+    "lastCommitSubject": "Drop the stray submodule gitlinks that break the Pages clone",
+    "commitCount": 21,
     "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
   },
   "readme": {
