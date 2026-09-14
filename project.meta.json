@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T21:36:21.498Z",
+  "generatedAt": "2026-09-14T22:04:26.573Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -156,7 +156,7 @@
   "metrics": {
     "sourceFiles": 117,
     "testFiles": 21,
-    "sourceLines": 19010,
+    "sourceLines": 19019,
     "largestDirectories": [
       {
         "directory": "packages",
@@ -195,10 +195,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "383ba4d",
-    "lastCommitDate": "2026-09-15T00:05:13+03:00",
-    "lastCommitSubject": "Ignore the reference checkouts",
-    "commitCount": 23,
+    "head": "fb6b723",
+    "lastCommitDate": "2026-09-15T00:38:37+03:00",
+    "lastCommitSubject": "Gate pushes on a current link-preview card and icon set",
+    "commitCount": 24,
     "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
   },
   "readme": {
