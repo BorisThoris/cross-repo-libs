@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-03T21:50:29.398Z",
+  "generatedAt": "2026-09-14T20:27:14.091Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -49,7 +49,10 @@
       "meta:check",
       "shots",
       "social",
-      "social:check"
+      "social:check",
+      "icons",
+      "icons:check",
+      "meta:refresh"
     ]
   },
   "capture": {
@@ -151,13 +154,13 @@
     ]
   },
   "metrics": {
-    "sourceFiles": 112,
-    "testFiles": 20,
-    "sourceLines": 17500,
+    "sourceFiles": 117,
+    "testFiles": 21,
+    "sourceLines": 18976,
     "largestDirectories": [
       {
         "directory": "packages",
-        "files": 86
+        "files": 89
       },
       {
         "directory": "apps",
@@ -165,7 +168,7 @@
       },
       {
         "directory": "scripts",
-        "files": 7
+        "files": 9
       },
       {
         "directory": ".",
@@ -192,10 +195,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "4b135ee",
-    "lastCommitDate": "2026-09-03T23:46:14+03:00",
-    "lastCommitSubject": "Refresh project metadata",
-    "commitCount": 18,
+    "head": "a3abe3e",
+    "lastCommitDate": "2026-09-04T00:53:04+03:00",
+    "lastCommitSubject": "Photograph the project and make its link unfurl",
+    "commitCount": 19,
     "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
   },
   "readme": {

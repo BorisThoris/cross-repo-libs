@@ -15,7 +15,15 @@
     "test:watch": "vitest",
     "lint": "eslint .",
     "example:dev": "npm run dev --workspace=example-web",
-    "storybook:dev": "npm run example:dev"
+    "storybook:dev": "npm run example:dev",
+    "meta": "node scripts/generate-project-meta.mjs",
+    "meta:check": "node scripts/generate-project-meta.mjs --check",
+    "shots": "node scripts/capture-project-shots.mjs",
+    "social": "node scripts/generate-social-preview.mjs",
+    "social:check": "node scripts/generate-social-preview.mjs --check",
+    "icons": "node scripts/generate-app-icons.mjs",
+    "icons:check": "node scripts/generate-app-icons.mjs --check",
+    "meta:refresh": "node scripts/refresh-project-meta.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",

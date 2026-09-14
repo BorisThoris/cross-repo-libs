@@ -65,6 +65,13 @@ export default {
     "imageUrlPath": "/og-image.jpg"
   },
 
+  // The icon set is rendered from favicon.svg by scripts/generate-app-icons.mjs.
+  icons: {
+    "background": "#1b3f8f",
+    "themeColor": "#2457c5",
+    "shortName": "Cross Repo Libs"
+  },
+
   media: {
     sourceDir: path.join(portfolioRoot, "public", "project-shots", "cross-repo-libs", "latest"),
     publicPathPrefix: "/project-shots/cross-repo-libs/latest",

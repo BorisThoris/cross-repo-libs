@@ -1,0 +1,17 @@
+{
+  "slug": "cross-repo-libs",
+  "source": "apps/example-web/public/favicon.svg",
+  "sourceHash": "863b9cf1451f8727",
+  "outputDir": "apps/example-web/public",
+  "urlPrefix": "/",
+  "renderedAt": "2026-09-14T20:12:54.731Z",
+  "files": [
+    "favicon.ico",
+    "apple-touch-icon.png",
+    "icon-192.png",
+    "icon-512.png",
+    "icon-maskable-512.png",
+    "favicon.svg",
+    "site.webmanifest"
+  ]
+}
