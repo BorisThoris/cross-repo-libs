@@ -20,13 +20,14 @@ export default {
 
   curated: {
     "title": "Cross Repo Libs",
-    "subtitle": "Reusable workspace packages",
-    "description": "A monorepo of shared packages and an example web app that demonstrates local notifications and reusable runtime utilities.",
+    "subtitle": "Component showcase for the shared packages",
+    "description": "A Storybook-style showcase of the packages shared across these projects: React UI pieces (buttons, cards, HUDs, dialogs, a pixel texture drawer), React Three Fiber props such as torches and braziers, a toast and confirm stack, and the local AI image, music and 3D generation helpers behind them.",
     "tags": [
-      "Workspaces",
-      "TypeScript",
+      "Monorepo",
+      "Component Library",
       "React",
-      "Vite"
+      "React Three Fiber",
+      "Storybook"
     ],
     "accent": "#a78bfa",
     "deploymentUrl": "https://cross-repo-libs-git.pages.dev/",
@@ -60,6 +61,7 @@ export default {
   // Graph tags, and the static directory the image is published from.
   social: {
     "htmlFile": "apps/example-web/index.html",
+    "pageTitle": "Cross Repo Libs · component showcase",
     "staticDir": "apps/example-web/public",
     "imageName": "og-image.jpg",
     "imageUrlPath": "/og-image.jpg"

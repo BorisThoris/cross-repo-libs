@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T22:22:06.927Z",
+  "generatedAt": "2026-09-15T12:15:30.979Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -9,13 +9,14 @@
     "packageName": "cross-repo-libs",
     "version": "0.0.0",
     "title": "Cross Repo Libs",
-    "subtitle": "Reusable workspace packages",
-    "description": "A monorepo of shared packages and an example web app that demonstrates local notifications and reusable runtime utilities.",
+    "subtitle": "Component showcase for the shared packages",
+    "description": "A Storybook-style showcase of the packages shared across these projects: React UI pieces (buttons, cards, HUDs, dialogs, a pixel texture drawer), React Three Fiber props such as torches and braziers, a toast and confirm stack, and the local AI image, music and 3D generation helpers behind them.",
     "tags": [
-      "Workspaces",
-      "TypeScript",
+      "Monorepo",
+      "Component Library",
       "React",
-      "Vite"
+      "React Three Fiber",
+      "Storybook"
     ],
     "accent": "#a78bfa",
     "classification": "web-library",
@@ -37,11 +38,14 @@
     "scripts": [
       "build",
       "components:scan",
+      "reuse:scan",
       "test",
       "test:watch",
       "lint",
       "example:dev",
       "storybook:dev",
+      "premcp:smoke",
+      "mcp:smoke",
       "meta",
       "meta:check",
       "shots",
@@ -57,7 +61,7 @@
   },
   "media": {
     "source": "repo-local",
-    "directory": "/home/runner/work/cross-repo-libs/cross-repo-libs/project-media",
+    "directory": "C:/Users/Gaming PC/Desktop/Repos/cross-repo-libs/project-media",
     "primary": "project-media/card.jpg",
     "images": [
       {
@@ -67,7 +71,7 @@
         "bytes": 187266,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-14T22:21:59.808Z"
+        "capturedAt": "2026-09-14T22:50:17.631Z"
       },
       {
         "profile": "desktop",
@@ -76,7 +80,7 @@
         "bytes": 176998,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-14T22:22:01.525Z"
+        "capturedAt": "2026-09-14T22:50:17.634Z"
       },
       {
         "profile": "full",
@@ -85,7 +89,7 @@
         "bytes": 214282,
         "width": 1440,
         "height": 2502,
-        "capturedAt": "2026-09-14T22:22:05.161Z"
+        "capturedAt": "2026-09-14T22:50:17.637Z"
       },
       {
         "profile": "mobile",
@@ -94,7 +98,7 @@
         "bytes": 46876,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-14T22:22:03.248Z"
+        "capturedAt": "2026-09-14T22:50:17.638Z"
       },
       {
         "profile": "og",
@@ -103,7 +107,7 @@
         "bytes": 134019,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-14T22:22:06.770Z"
+        "capturedAt": "2026-09-14T22:50:17.640Z"
       }
     ]
   },
@@ -151,13 +155,13 @@
     ]
   },
   "metrics": {
-    "sourceFiles": 96,
-    "testFiles": 16,
-    "sourceLines": 14365,
+    "sourceFiles": 117,
+    "testFiles": 21,
+    "sourceLines": 19059,
     "largestDirectories": [
       {
         "directory": "packages",
-        "files": 73
+        "files": 89
       },
       {
         "directory": "apps",
@@ -165,10 +169,14 @@
       },
       {
         "directory": "scripts",
-        "files": 7
+        "files": 9
       },
       {
         "directory": ".",
+        "files": 3
+      },
+      {
+        "directory": "local-models",
         "files": 3
       }
     ],
@@ -188,11 +196,11 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "2c46008",
-    "lastCommitDate": "2026-09-15T01:04:27+03:00",
-    "lastCommitSubject": "Refresh screenshots, card, icons and metadata after every deployment",
-    "commitCount": 25,
-    "remote": "https://github.com/BorisThoris/cross-repo-libs"
+    "head": "57ce67d",
+    "lastCommitDate": "2026-09-15T01:50:17+03:00",
+    "lastCommitSubject": "Let the refresh wait up to 90 minutes for a queued Cloudflare build [meta-bot]",
+    "commitCount": 27,
+    "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
   },
   "readme": {
     "file": "README.md",

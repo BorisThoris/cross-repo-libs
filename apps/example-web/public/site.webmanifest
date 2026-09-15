@@ -1,7 +1,7 @@
 {
   "name": "Cross Repo Libs",
   "short_name": "Cross Repo Libs",
-  "description": "A monorepo of shared packages and an example web app that demonstrates local notifications and reusable runtime utilities.",
+  "description": "A Storybook-style showcase of the packages shared across these projects: React UI pieces (buttons, cards, HUDs, dialogs, a pixel texture drawer), React Three Fiber props such as torches and braziers, a toast and confirm stack, and the local AI image, music and 3D generation helpers behind them.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
