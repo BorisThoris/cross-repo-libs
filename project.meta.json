@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-15T12:15:30.979Z",
+  "generatedAt": "2026-09-15T12:25:33.324Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -38,14 +38,11 @@
     "scripts": [
       "build",
       "components:scan",
-      "reuse:scan",
       "test",
       "test:watch",
       "lint",
       "example:dev",
       "storybook:dev",
-      "premcp:smoke",
-      "mcp:smoke",
       "meta",
       "meta:check",
       "shots",
@@ -61,35 +58,35 @@
   },
   "media": {
     "source": "repo-local",
-    "directory": "C:/Users/Gaming PC/Desktop/Repos/cross-repo-libs/project-media",
+    "directory": "/home/runner/work/cross-repo-libs/cross-repo-libs/project-media",
     "primary": "project-media/card.jpg",
     "images": [
       {
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 187266,
+        "bytes": 187198,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-14T22:50:17.631Z"
+        "capturedAt": "2026-09-15T12:25:26.852Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 176998,
+        "bytes": 176947,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-14T22:50:17.634Z"
+        "capturedAt": "2026-09-15T12:25:28.422Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 214282,
+        "bytes": 214357,
         "width": 1440,
         "height": 2502,
-        "capturedAt": "2026-09-14T22:50:17.637Z"
+        "capturedAt": "2026-09-15T12:25:31.685Z"
       },
       {
         "profile": "mobile",
@@ -98,16 +95,16 @@
         "bytes": 46876,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-14T22:50:17.638Z"
+        "capturedAt": "2026-09-15T12:25:29.957Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 134019,
+        "bytes": 133983,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-14T22:50:17.640Z"
+        "capturedAt": "2026-09-15T12:25:33.173Z"
       }
     ]
   },
@@ -155,13 +152,13 @@
     ]
   },
   "metrics": {
-    "sourceFiles": 117,
-    "testFiles": 21,
-    "sourceLines": 19059,
+    "sourceFiles": 96,
+    "testFiles": 16,
+    "sourceLines": 14405,
     "largestDirectories": [
       {
         "directory": "packages",
-        "files": 89
+        "files": 73
       },
       {
         "directory": "apps",
@@ -169,14 +166,10 @@
       },
       {
         "directory": "scripts",
-        "files": 9
+        "files": 7
       },
       {
         "directory": ".",
-        "files": 3
-      },
-      {
-        "directory": "local-models",
         "files": 3
       }
     ],
@@ -196,11 +189,11 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "57ce67d",
-    "lastCommitDate": "2026-09-15T01:50:17+03:00",
-    "lastCommitSubject": "Let the refresh wait up to 90 minutes for a queued Cloudflare build [meta-bot]",
-    "commitCount": 27,
-    "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
+    "head": "a5dec2e",
+    "lastCommitDate": "2026-09-15T15:18:02+03:00",
+    "lastCommitSubject": "Say what the app actually is: specific title, blurb and tags for the card",
+    "commitCount": 28,
+    "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
     "file": "README.md",

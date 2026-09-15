@@ -1,6 +1,6 @@
 {
   "slug": "cross-repo-libs",
-  "capturedAt": "2026-09-14T22:22:06.806Z",
+  "capturedAt": "2026-09-15T12:25:33.213Z",
   "source": "deployment",
   "url": "https://cross-repo-libs-git.pages.dev/",
   "recipe": {
@@ -12,7 +12,7 @@
       "file": "card.jpg",
       "width": 1600,
       "height": 900,
-      "bytes": 187266,
+      "bytes": 187198,
       "status": "captured"
     },
     {
@@ -20,7 +20,7 @@
       "file": "desktop.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 176998,
+      "bytes": 176947,
       "status": "captured"
     },
     {
@@ -36,7 +36,7 @@
       "file": "full.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 214282,
+      "bytes": 214357,
       "status": "captured"
     },
     {
@@ -44,7 +44,7 @@
       "file": "og.jpg",
       "width": 1200,
       "height": 630,
-      "bytes": 134019,
+      "bytes": 133983,
       "status": "captured"
     }
   ]
