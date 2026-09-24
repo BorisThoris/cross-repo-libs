@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-17T10:25:31.048Z",
+  "generatedAt": "2026-09-24T12:52:46.165Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -38,14 +38,11 @@
     "scripts": [
       "build",
       "components:scan",
-      "reuse:scan",
       "test",
       "test:watch",
       "lint",
       "example:dev",
       "storybook:dev",
-      "premcp:smoke",
-      "mcp:smoke",
       "meta",
       "meta:check",
       "shots",
@@ -53,7 +50,9 @@
       "social:check",
       "icons",
       "icons:check",
-      "meta:refresh"
+      "meta:refresh",
+      "trailers",
+      "trailers:check"
     ]
   },
   "capture": {
@@ -61,53 +60,53 @@
   },
   "media": {
     "source": "repo-local",
-    "directory": "C:/Users/Gaming PC/Desktop/Repos/cross-repo-libs/project-media",
+    "directory": "/home/runner/work/cross-repo-libs/cross-repo-libs/project-media",
     "primary": "project-media/card.jpg",
     "images": [
       {
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 178726,
+        "bytes": 187298,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-17T10:25:23.808Z"
+        "capturedAt": "2026-09-24T12:52:39.267Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 167522,
+        "bytes": 176992,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-17T10:25:25.239Z"
+        "capturedAt": "2026-09-24T12:52:40.986Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 215032,
+        "bytes": 214381,
         "width": 1440,
-        "height": 2620,
-        "capturedAt": "2026-09-17T10:25:28.186Z"
+        "height": 2502,
+        "capturedAt": "2026-09-24T12:52:44.429Z"
       },
       {
         "profile": "mobile",
         "file": "mobile.jpg",
         "path": "project-media/mobile.jpg",
-        "bytes": 44246,
+        "bytes": 46876,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-17T10:25:26.635Z"
+        "capturedAt": "2026-09-24T12:52:42.637Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 128265,
+        "bytes": 133944,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-17T10:25:29.624Z"
+        "capturedAt": "2026-09-24T12:52:46.035Z"
       }
     ]
   },
@@ -155,13 +154,13 @@
     ]
   },
   "metrics": {
-    "sourceFiles": 117,
-    "testFiles": 21,
-    "sourceLines": 19059,
+    "sourceFiles": 97,
+    "testFiles": 16,
+    "sourceLines": 14960,
     "largestDirectories": [
       {
         "directory": "packages",
-        "files": 89
+        "files": 73
       },
       {
         "directory": "apps",
@@ -169,14 +168,10 @@
       },
       {
         "directory": "scripts",
-        "files": 9
+        "files": 8
       },
       {
         "directory": ".",
-        "files": 3
-      },
-      {
-        "directory": "local-models",
         "files": 3
       }
     ],
@@ -196,11 +191,11 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "fedafcf",
-    "lastCommitDate": "2026-09-15T12:25:33+00:00",
-    "lastCommitSubject": "Refresh screenshots, card, icons and metadata [meta-bot]",
-    "commitCount": 29,
-    "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
+    "head": "ed106c7",
+    "lastCommitDate": "2026-09-24T15:41:38+03:00",
+    "lastCommitSubject": "Update the metadata toolkit scripts: trailers step, refresh --commit, capture.skip",
+    "commitCount": 31,
+    "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
     "file": "README.md",
