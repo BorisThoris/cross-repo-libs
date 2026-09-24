@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-24T14:39:35.865Z",
+  "generatedAt": "2026-09-24T16:25:47.590Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -67,28 +67,28 @@
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 187283,
+        "bytes": 187250,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-24T14:39:28.820Z"
+        "capturedAt": "2026-09-24T16:25:40.004Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 176952,
+        "bytes": 176961,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-24T14:39:30.485Z"
+        "capturedAt": "2026-09-24T16:25:41.788Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 214371,
+        "bytes": 214382,
         "width": 1440,
         "height": 2502,
-        "capturedAt": "2026-09-24T14:39:33.996Z"
+        "capturedAt": "2026-09-24T16:25:45.614Z"
       },
       {
         "profile": "mobile",
@@ -97,16 +97,16 @@
         "bytes": 46876,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-24T14:39:32.058Z"
+        "capturedAt": "2026-09-24T16:25:43.542Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 133980,
+        "bytes": 134061,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-24T14:39:35.703Z"
+        "capturedAt": "2026-09-24T16:25:47.411Z"
       }
     ]
   },
@@ -156,7 +156,7 @@
   "metrics": {
     "sourceFiles": 97,
     "testFiles": 16,
-    "sourceLines": 14986,
+    "sourceLines": 15009,
     "largestDirectories": [
       {
         "directory": "packages",
@@ -191,10 +191,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "2537334",
-    "lastCommitDate": "2026-09-24T16:43:38+03:00",
+    "head": "b2f2c00",
+    "lastCommitDate": "2026-09-24T19:13:12+03:00",
     "lastCommitSubject": "Update the metadata toolkit scripts: trailers step, refresh --commit, capture.skip",
-    "commitCount": 34,
+    "commitCount": 36,
     "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
