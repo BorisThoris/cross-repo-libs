@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T13:23:17.134Z",
+  "generatedAt": "2026-09-27T13:26:42.027Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -79,53 +79,53 @@
   },
   "media": {
     "source": "repo-local",
-    "directory": "C:/Users/GAMING~1/AppData/Local/Temp/media-rollout-tAKv5g/project-media",
+    "directory": "/home/runner/work/cross-repo-libs/cross-repo-libs/project-media",
     "primary": "project-media/card.jpg",
     "images": [
       {
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 114494,
+        "bytes": 121945,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-27T13:22:22.228Z"
+        "capturedAt": "2026-09-27T13:26:26.153Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 111891,
+        "bytes": 119109,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-27T13:22:30.164Z"
+        "capturedAt": "2026-09-27T13:26:30.149Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 166190,
+        "bytes": 163348,
         "width": 1440,
-        "height": 2620,
-        "capturedAt": "2026-09-27T13:23:04.562Z"
+        "height": 2502,
+        "capturedAt": "2026-09-27T13:26:38.028Z"
       },
       {
         "profile": "mobile",
         "file": "mobile.jpg",
         "path": "project-media/mobile.jpg",
-        "bytes": 41084,
+        "bytes": 41638,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-27T13:22:53.709Z"
+        "capturedAt": "2026-09-27T13:26:33.983Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 93171,
+        "bytes": 95145,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-27T13:23:09.295Z"
+        "capturedAt": "2026-09-27T13:26:41.873Z"
       }
     ],
     "trailers": [
@@ -224,12 +224,12 @@
   },
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
-    "branch": "HEAD",
-    "head": "7dd74e4",
-    "lastCommitDate": "2026-09-24T16:25:47+00:00",
-    "lastCommitSubject": "Refresh screenshots, card, icons and metadata [meta-bot]",
-    "commitCount": 37,
-    "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
+    "branch": "master",
+    "head": "34ac557",
+    "lastCommitDate": "2026-09-27T16:23:26+03:00",
+    "lastCommitSubject": "A media strategy with tests: screenshots that show the app, a recorded trailer, a gated refresh",
+    "commitCount": 38,
+    "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
     "file": "README.md",

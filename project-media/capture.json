@@ -1,6 +1,6 @@
 {
   "slug": "cross-repo-libs",
-  "capturedAt": "2026-09-27T13:23:09.855Z",
+  "capturedAt": "2026-09-27T13:26:41.900Z",
   "source": "deployment",
   "url": "https://cross-repo-libs-git.pages.dev/",
   "recipe": {
@@ -29,13 +29,13 @@
       "file": "card.jpg",
       "width": 1600,
       "height": 900,
-      "bytes": 114494,
+      "bytes": 121945,
       "status": "captured",
       "stats": {
-        "mean": 182,
-        "std": 98,
+        "mean": 181,
+        "std": 99,
         "dark": 0,
-        "light": 0.594,
+        "light": 0.578,
         "colours": 26
       }
     },
@@ -44,13 +44,13 @@
       "file": "desktop.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 111891,
+      "bytes": 119109,
       "status": "captured",
       "stats": {
         "mean": 189,
         "std": 94,
         "dark": 0,
-        "light": 0.613,
+        "light": 0.596,
         "colours": 28
       }
     },
@@ -59,14 +59,14 @@
       "file": "mobile.jpg",
       "width": 430,
       "height": 932,
-      "bytes": 41084,
+      "bytes": 41638,
       "status": "captured",
       "stats": {
         "mean": 245,
         "std": 28,
         "dark": 0,
-        "light": 0.885,
-        "colours": 39
+        "light": 0.889,
+        "colours": 36
       }
     },
     {
@@ -74,13 +74,13 @@
       "file": "full.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 166190,
+      "bytes": 163348,
       "status": "captured",
       "stats": {
         "mean": 189,
         "std": 94,
         "dark": 0,
-        "light": 0.613,
+        "light": 0.596,
         "colours": 28
       }
     },
@@ -89,14 +89,14 @@
       "file": "og.jpg",
       "width": 1200,
       "height": 630,
-      "bytes": 93171,
+      "bytes": 95145,
       "status": "captured",
       "stats": {
-        "mean": 201,
+        "mean": 200,
         "std": 85,
         "dark": 0,
-        "light": 0.602,
-        "colours": 25
+        "light": 0.601,
+        "colours": 32
       }
     }
   ]
