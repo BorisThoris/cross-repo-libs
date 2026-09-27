@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "tour",
+      "title": "Cross Repo Libs: the component storybook",
+      "kind": "capture",
+      "inputsHash": "8ae6cada3460d688c9e5c35b708573ced714dc1c02b4afc7e0c407a9e858c42b",
+      "builtAt": "2026-09-27T13:21:15.432Z",
+      "source": "project-media/.captures/tour.webm",
+      "file": "apps/example-web/public/trailers/tour.mp4",
+      "poster": "apps/example-web/public/trailers/tour.jpg",
+      "urlPath": "/trailers/tour.mp4",
+      "posterUrlPath": "/trailers/tour.jpg",
+      "bytes": 1067187,
+      "width": 1280,
+      "height": 720,
+      "duration": 24,
+      "fps": 30,
+      "orientation": "landscape",
+      "music": "project-media/music/tour.m4a",
+      "stats": {
+        "mean": 219,
+        "std": 53,
+        "dark": 0,
+        "light": 0.571,
+        "colours": 62
+      }
+    }
+  ]
+}

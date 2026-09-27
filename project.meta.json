@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-24T16:25:47.590Z",
+  "generatedAt": "2026-09-27T13:23:17.134Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -52,61 +52,95 @@
       "icons:check",
       "meta:refresh",
       "trailers",
-      "trailers:check"
+      "trailers:check",
+      "test:media",
+      "test:media:e2e"
     ]
   },
   "capture": {
-    "route": "/"
+    "route": "/",
+    "actions": [
+      {
+        "type": "click",
+        "target": {
+          "role": "button",
+          "name": "Torch"
+        },
+        "label": "open the torch story",
+        "optional": true
+      },
+      {
+        "type": "wait",
+        "ms": 2500,
+        "label": "let the 3D story render"
+      }
+    ],
+    "waitAfterReadyMs": 800
   },
   "media": {
     "source": "repo-local",
-    "directory": "/home/runner/work/cross-repo-libs/cross-repo-libs/project-media",
+    "directory": "C:/Users/GAMING~1/AppData/Local/Temp/media-rollout-tAKv5g/project-media",
     "primary": "project-media/card.jpg",
     "images": [
       {
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 187250,
+        "bytes": 114494,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-24T16:25:40.004Z"
+        "capturedAt": "2026-09-27T13:22:22.228Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 176961,
+        "bytes": 111891,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-24T16:25:41.788Z"
+        "capturedAt": "2026-09-27T13:22:30.164Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 214382,
+        "bytes": 166190,
         "width": 1440,
-        "height": 2502,
-        "capturedAt": "2026-09-24T16:25:45.614Z"
+        "height": 2620,
+        "capturedAt": "2026-09-27T13:23:04.562Z"
       },
       {
         "profile": "mobile",
         "file": "mobile.jpg",
         "path": "project-media/mobile.jpg",
-        "bytes": 46876,
+        "bytes": 41084,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-24T16:25:43.542Z"
+        "capturedAt": "2026-09-27T13:22:53.709Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 134061,
+        "bytes": 93171,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-24T16:25:47.411Z"
+        "capturedAt": "2026-09-27T13:23:09.295Z"
+      }
+    ],
+    "trailers": [
+      {
+        "id": "tour",
+        "title": "Cross Repo Libs: the component storybook",
+        "url": "https://cross-repo-libs-git.pages.dev/trailers/tour.mp4",
+        "poster": "https://cross-repo-libs-git.pages.dev/trailers/tour.jpg",
+        "file": "apps/example-web/public/trailers/tour.mp4",
+        "bytes": 1067187,
+        "width": 1280,
+        "height": 720,
+        "duration": 24,
+        "orientation": "landscape",
+        "builtAt": "2026-09-27T13:21:15.432Z"
       }
     ]
   },
@@ -154,9 +188,9 @@
     ]
   },
   "metrics": {
-    "sourceFiles": 97,
-    "testFiles": 16,
-    "sourceLines": 15009,
+    "sourceFiles": 100,
+    "testFiles": 18,
+    "sourceLines": 15892,
     "largestDirectories": [
       {
         "directory": "packages",
@@ -168,7 +202,7 @@
       },
       {
         "directory": "scripts",
-        "files": 8
+        "files": 11
       },
       {
         "directory": ".",
@@ -190,12 +224,12 @@
   },
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
-    "branch": "master",
-    "head": "b2f2c00",
-    "lastCommitDate": "2026-09-24T19:13:12+03:00",
-    "lastCommitSubject": "Update the metadata toolkit scripts: trailers step, refresh --commit, capture.skip",
-    "commitCount": 36,
-    "remote": "https://github.com/BorisThoris/cross-repo-libs"
+    "branch": "HEAD",
+    "head": "7dd74e4",
+    "lastCommitDate": "2026-09-24T16:25:47+00:00",
+    "lastCommitSubject": "Refresh screenshots, card, icons and metadata [meta-bot]",
+    "commitCount": 37,
+    "remote": "https://github.com/BorisThoris/cross-repo-libs.git"
   },
   "readme": {
     "file": "README.md",

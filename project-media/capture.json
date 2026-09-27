@@ -1,10 +1,27 @@
 {
   "slug": "cross-repo-libs",
-  "capturedAt": "2026-09-24T16:25:47.460Z",
+  "capturedAt": "2026-09-27T13:23:09.855Z",
   "source": "deployment",
   "url": "https://cross-repo-libs-git.pages.dev/",
   "recipe": {
-    "route": "/"
+    "route": "/",
+    "actions": [
+      {
+        "type": "click",
+        "target": {
+          "role": "button",
+          "name": "Torch"
+        },
+        "label": "open the torch story",
+        "optional": true
+      },
+      {
+        "type": "wait",
+        "ms": 2500,
+        "label": "let the 3D story render"
+      }
+    ],
+    "waitAfterReadyMs": 800
   },
   "profiles": [
     {
@@ -12,40 +29,75 @@
       "file": "card.jpg",
       "width": 1600,
       "height": 900,
-      "bytes": 187250,
-      "status": "captured"
+      "bytes": 114494,
+      "status": "captured",
+      "stats": {
+        "mean": 182,
+        "std": 98,
+        "dark": 0,
+        "light": 0.594,
+        "colours": 26
+      }
     },
     {
       "profile": "desktop",
       "file": "desktop.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 176961,
-      "status": "captured"
+      "bytes": 111891,
+      "status": "captured",
+      "stats": {
+        "mean": 189,
+        "std": 94,
+        "dark": 0,
+        "light": 0.613,
+        "colours": 28
+      }
     },
     {
       "profile": "mobile",
       "file": "mobile.jpg",
       "width": 430,
       "height": 932,
-      "bytes": 46876,
-      "status": "captured"
+      "bytes": 41084,
+      "status": "captured",
+      "stats": {
+        "mean": 245,
+        "std": 28,
+        "dark": 0,
+        "light": 0.885,
+        "colours": 39
+      }
     },
     {
       "profile": "full",
       "file": "full.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 214382,
-      "status": "captured"
+      "bytes": 166190,
+      "status": "captured",
+      "stats": {
+        "mean": 189,
+        "std": 94,
+        "dark": 0,
+        "light": 0.613,
+        "colours": 28
+      }
     },
     {
       "profile": "og",
       "file": "og.jpg",
       "width": 1200,
       "height": 630,
-      "bytes": 134061,
-      "status": "captured"
+      "bytes": 93171,
+      "status": "captured",
+      "stats": {
+        "mean": 201,
+        "std": 85,
+        "dark": 0,
+        "light": 0.602,
+        "colours": 25
+      }
     }
   ]
 }

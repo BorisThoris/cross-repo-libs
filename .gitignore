@@ -15,3 +15,5 @@ local-output/
 
 # Plain reference checkouts of other repos; never part of this tree.
 references/
+# recorded trailer masters (scripts/build-project-trailers.mjs)
+project-media/.captures/
