@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T13:26:42.027Z",
+  "generatedAt": "2026-09-27T14:43:17.182Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -89,7 +89,7 @@
         "bytes": 121945,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-27T13:26:26.153Z"
+        "capturedAt": "2026-09-27T14:43:00.938Z"
       },
       {
         "profile": "desktop",
@@ -98,7 +98,7 @@
         "bytes": 119109,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-27T13:26:30.149Z"
+        "capturedAt": "2026-09-27T14:43:04.967Z"
       },
       {
         "profile": "full",
@@ -107,7 +107,7 @@
         "bytes": 163348,
         "width": 1440,
         "height": 2502,
-        "capturedAt": "2026-09-27T13:26:38.028Z"
+        "capturedAt": "2026-09-27T14:43:13.023Z"
       },
       {
         "profile": "mobile",
@@ -116,7 +116,7 @@
         "bytes": 41638,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-27T13:26:33.983Z"
+        "capturedAt": "2026-09-27T14:43:08.801Z"
       },
       {
         "profile": "og",
@@ -125,7 +125,7 @@
         "bytes": 95145,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-27T13:26:41.873Z"
+        "capturedAt": "2026-09-27T14:43:16.944Z"
       }
     ],
     "trailers": [
@@ -190,7 +190,7 @@
   "metrics": {
     "sourceFiles": 100,
     "testFiles": 18,
-    "sourceLines": 15892,
+    "sourceLines": 15897,
     "largestDirectories": [
       {
         "directory": "packages",
@@ -225,10 +225,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "34ac557",
-    "lastCommitDate": "2026-09-27T16:23:26+03:00",
-    "lastCommitSubject": "A media strategy with tests: screenshots that show the app, a recorded trailer, a gated refresh",
-    "commitCount": 38,
+    "head": "d566d68",
+    "lastCommitDate": "2026-09-27T17:32:20+03:00",
+    "lastCommitSubject": "Update the metadata toolkit scripts: trailers step, refresh --commit, capture.skip",
+    "commitCount": 40,
     "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
