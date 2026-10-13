@@ -1,6 +1,6 @@
 {
   "slug": "cross-repo-libs",
-  "capturedAt": "2026-09-27T14:43:17.018Z",
+  "capturedAt": "2026-10-13T01:04:15.344Z",
   "source": "deployment",
   "url": "https://cross-repo-libs-git.pages.dev/",
   "recipe": {
@@ -29,14 +29,14 @@
       "file": "card.jpg",
       "width": 1600,
       "height": 900,
-      "bytes": 121945,
+      "bytes": 110038,
       "status": "captured",
       "stats": {
-        "mean": 181,
-        "std": 99,
+        "mean": 245,
+        "std": 27,
         "dark": 0,
-        "light": 0.578,
-        "colours": 26
+        "light": 0.875,
+        "colours": 16
       }
     },
     {
@@ -44,14 +44,14 @@
       "file": "desktop.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 119109,
+      "bytes": 111426,
       "status": "captured",
       "stats": {
         "mean": 189,
-        "std": 94,
+        "std": 95,
         "dark": 0,
-        "light": 0.596,
-        "colours": 28
+        "light": 0.6,
+        "colours": 24
       }
     },
     {
@@ -59,14 +59,14 @@
       "file": "mobile.jpg",
       "width": 430,
       "height": 932,
-      "bytes": 41638,
+      "bytes": 40585,
       "status": "captured",
       "stats": {
         "mean": 245,
         "std": 28,
         "dark": 0,
         "light": 0.889,
-        "colours": 36
+        "colours": 30
       }
     },
     {
@@ -74,14 +74,14 @@
       "file": "full.jpg",
       "width": 1440,
       "height": 900,
-      "bytes": 163348,
+      "bytes": 156685,
       "status": "captured",
       "stats": {
         "mean": 189,
-        "std": 94,
+        "std": 95,
         "dark": 0,
-        "light": 0.596,
-        "colours": 28
+        "light": 0.6,
+        "colours": 24
       }
     },
     {
@@ -89,14 +89,14 @@
       "file": "og.jpg",
       "width": 1200,
       "height": 630,
-      "bytes": 95145,
+      "bytes": 88699,
       "status": "captured",
       "stats": {
         "mean": 200,
         "std": 85,
         "dark": 0,
-        "light": 0.601,
-        "colours": 32
+        "light": 0.603,
+        "colours": 24
       }
     }
   ]

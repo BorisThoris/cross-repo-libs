@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T14:43:17.182Z",
+  "generatedAt": "2026-10-13T01:04:16.531Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -79,53 +79,53 @@
   },
   "media": {
     "source": "repo-local",
-    "directory": "/home/runner/work/cross-repo-libs/cross-repo-libs/project-media",
+    "directory": "/root/gha/runners/cross-repo-libs/_work/cross-repo-libs/cross-repo-libs/project-media",
     "primary": "project-media/card.jpg",
     "images": [
       {
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 121945,
+        "bytes": 110038,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-09-27T14:43:00.938Z"
+        "capturedAt": "2026-10-13T01:03:46.632Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 119109,
+        "bytes": 111426,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-09-27T14:43:04.967Z"
+        "capturedAt": "2026-10-13T01:03:54.408Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 163348,
+        "bytes": 156685,
         "width": 1440,
         "height": 2502,
-        "capturedAt": "2026-09-27T14:43:13.023Z"
+        "capturedAt": "2026-10-13T01:04:08.228Z"
       },
       {
         "profile": "mobile",
         "file": "mobile.jpg",
         "path": "project-media/mobile.jpg",
-        "bytes": 41638,
+        "bytes": 40585,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-09-27T14:43:08.801Z"
+        "capturedAt": "2026-10-13T01:04:00.956Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 95145,
+        "bytes": 88699,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-09-27T14:43:16.944Z"
+        "capturedAt": "2026-10-13T01:04:14.560Z"
       }
     ],
     "trailers": [
@@ -225,10 +225,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "d566d68",
-    "lastCommitDate": "2026-09-27T17:32:20+03:00",
-    "lastCommitSubject": "Update the metadata toolkit scripts: trailers step, refresh --commit, capture.skip",
-    "commitCount": 40,
+    "head": "06a0f20",
+    "lastCommitDate": "2026-10-13T01:43:30+03:00",
+    "lastCommitSubject": "Hosted jobs move to the owner's own runners",
+    "commitCount": 42,
     "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
