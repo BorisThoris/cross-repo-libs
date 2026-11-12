@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/project.meta.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T01:04:16.531Z",
+  "generatedAt": "2026-11-12T00:37:56.646Z",
   "generatedBy": "scripts/generate-project-meta.mjs",
   "identity": {
     "slug": "cross-repo-libs",
@@ -86,46 +86,46 @@
         "profile": "card",
         "file": "card.jpg",
         "path": "project-media/card.jpg",
-        "bytes": 110038,
+        "bytes": 97414,
         "width": 1600,
         "height": 900,
-        "capturedAt": "2026-10-13T01:03:46.632Z"
+        "capturedAt": "2026-11-12T00:37:32.379Z"
       },
       {
         "profile": "desktop",
         "file": "desktop.jpg",
         "path": "project-media/desktop.jpg",
-        "bytes": 111426,
+        "bytes": 99016,
         "width": 1440,
         "height": 900,
-        "capturedAt": "2026-10-13T01:03:54.408Z"
+        "capturedAt": "2026-11-12T00:37:38.495Z"
       },
       {
         "profile": "full",
         "file": "full.jpg",
         "path": "project-media/full.jpg",
-        "bytes": 156685,
+        "bytes": 145277,
         "width": 1440,
-        "height": 2502,
-        "capturedAt": "2026-10-13T01:04:08.228Z"
+        "height": 2524,
+        "capturedAt": "2026-11-12T00:37:49.611Z"
       },
       {
         "profile": "mobile",
         "file": "mobile.jpg",
         "path": "project-media/mobile.jpg",
-        "bytes": 40585,
+        "bytes": 38521,
         "width": 430,
         "height": 932,
-        "capturedAt": "2026-10-13T01:04:00.956Z"
+        "capturedAt": "2026-11-12T00:37:43.679Z"
       },
       {
         "profile": "og",
         "file": "og.jpg",
         "path": "project-media/og.jpg",
-        "bytes": 88699,
+        "bytes": 80335,
         "width": 1200,
         "height": 630,
-        "capturedAt": "2026-10-13T01:04:14.560Z"
+        "capturedAt": "2026-11-12T00:37:55.099Z"
       }
     ],
     "trailers": [
@@ -225,10 +225,10 @@
   "analysisNotes": "Reusable package workspace with an example app; less visual than games but valuable as architecture and shared-library evidence.",
   "git": {
     "branch": "master",
-    "head": "06a0f20",
-    "lastCommitDate": "2026-10-13T01:43:30+03:00",
-    "lastCommitSubject": "Hosted jobs move to the owner's own runners",
-    "commitCount": 42,
+    "head": "0a7977d",
+    "lastCommitDate": "2026-11-12T01:35:25+02:00",
+    "lastCommitSubject": "Republish the link-preview card from the new screenshots",
+    "commitCount": 45,
     "remote": "https://github.com/BorisThoris/cross-repo-libs"
   },
   "readme": {
